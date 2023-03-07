@@ -1,1 +1,5 @@
 <h1>All questions</h1>
+<%= simple_form_for [current_user.current_user_journey, @user_journey_answer] do |f| %>
+  <%= f.input :answer_id, collection: @question.answers.pluck(:content, :id), as: :radio_buttons, label: @question.content %>
+  <%= f.submit %>
+<% end %>

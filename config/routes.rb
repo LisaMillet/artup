@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
+  devise_for :users
   root to: "pages#home"
-  resources :journey, only: %i[show]
+  resources :journeys, only: %i[show]
   resources :user_journeys, only: %i[show create]
   resources :questions, only: :show
 end

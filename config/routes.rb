@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   end
   resources :user_journeys, only: %i[show create] do
     resources :user_journey_answers, only: %i[create]
+    resources :pieces, only: :show, controller: 'user_journeys/pieces'
   end
   resources :questions, only: :show
   resources :pieces, only: :show

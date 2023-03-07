@@ -11,6 +11,7 @@ class UserJourneyPolicy < ApplicationPolicy
   end
 
   def quit?
-    record.user == user
+    record.user == user && record.status == true
   end
+
 end

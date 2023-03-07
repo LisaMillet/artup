@@ -1,6 +1,9 @@
 Answer.destroy_all
 Question.destroy_all
 Piece.destroy_all
+Journey.destroy_all
+UserJourney.destroy_all
+User.destroy_all
 
 require "csv"
 

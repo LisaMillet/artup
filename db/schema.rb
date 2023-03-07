@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_07_140401) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_07_154230) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -75,6 +75,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_07_140401) do
     t.integer "score"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "status", default: true
     t.index ["journey_id"], name: "index_user_journeys_on_journey_id"
     t.index ["user_id"], name: "index_user_journeys_on_user_id"
   end

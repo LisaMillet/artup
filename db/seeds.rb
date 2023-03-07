@@ -1,6 +1,9 @@
 Answer.destroy_all
 Question.destroy_all
 Piece.destroy_all
+Journey.destroy_all
+UserJourney.destroy_all
+User.destroy_all
 
 require "csv"
 
@@ -33,3 +36,10 @@ csv.each do |row|
     Answer.find_by(content: row["correct_answer"]).update(right_answer: true) if Answer.find_by(content: row["correct_answer"])
   end
 end
+
+user = User.create!(email: "bob@mail.com", password: "mdpmdp")
+journey = Journey.create!(name: "beyonce", discount: 20)
+Piece.all.each do |p|
+  JourneyPiece.create!(piece: p, journey: journey)
+end
+UserJourney.create!(user: user, journey: journey)

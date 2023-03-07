@@ -27,3 +27,10 @@ csv.each do |row|
   Answer.create!(content: row["answer_3_content"], question_id: question.id)
   Answer.create!(content: row["answer_4_content"], question_id: question.id)
 end
+
+user = User.create!(email: "bob@mail.com", password: "mdpmdp")
+journey = Journey.create!(name: "beyonce", discount: 20)
+Piece.all.each do |p|
+  JourneyPiece.create!(piece: p, journey: journey)
+end
+UserJourney.create!(user: user, journey: journey)

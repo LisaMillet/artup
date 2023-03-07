@@ -1,2 +1,16 @@
-<h1>Bienvenue <%= @user_journey.user.first_name %></h1>
-<p>votre parcours <%= @user_journey.journey.name %></p>
+<% if current_user && policy(@user_journey).quit? == true %>
+  <h1>Bienvenue <%= @user_journey.user.first_name %></h1>
+
+  <p>votre parcours <%= @user_journey.journey.name %></p>
+
+  <p>Voici la liste des oeuvres à voir</p>
+  <% @user_journey.pieces.each do |piece| %>
+    <%= piece.name %>
+  <% end %>
+
+  <%= link_to 'Quitter la visite', quit_path(@user_journey), data:{turbo_method: :patch}  %>
+
+<% elsif current_user && policy(@user_journey).quit? == false %>
+  <p>voici le recap de votre parcours</p>
+
+<% end %>

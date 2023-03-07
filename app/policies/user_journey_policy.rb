@@ -10,4 +10,7 @@ class UserJourneyPolicy < ApplicationPolicy
     true
   end
 
+  def quit?
+    record.user == user
+  end
 end

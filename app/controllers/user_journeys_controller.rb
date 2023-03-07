@@ -8,6 +8,7 @@ class UserJourneysController < ApplicationController
     @user_journey = UserJourney.new(user_journey_params)
     @user_journey.journey = @journey
     @user_journey.user = current_user
+    authorize @user_journey
     if @user_journey.save
       redirect_to user_journey_path_(@user_journey)
     else

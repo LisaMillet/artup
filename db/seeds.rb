@@ -1,7 +1,29 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
+Answer.destroy_all
+Question.destroy_all
+Piece.destroy_all
+
+require "csv"
+
+filepath = "#{Rails.root.join('db', 'pieces.csv')}"
+# filepath = "/home/bourrm/code/LisaMillet/artup/db/pieces.csv"
+file = File.read(filepath, encoding: 'bom|utf-8')
+
+csv = CSV.parse(file, headers: :first_row, col_sep: ';')
+csv.each do |row|
+  piece = Piece.create!(name: row["name"], description: row["description"])
+  # photo attachment
+end
+
+filepath = "#{Rails.root.join('db', 'questions.csv')}"
+# filepath = "/home/bourrm/code/LisaMillet/artup/db/pieces.csv"
+file = File.read(filepath, encoding: 'bom|utf-8')
+
+csv = CSV.parse(file, headers: :first_row, col_sep: ';')
+csv.each do |row|
+  piece = Piece.find_by(name: row["piece_name"])
+  question = Question.create!(content: row["question_content"], piece_id: piece.id)
+  Answer.create!(content: row["answer_1_content"], question_id: question.id)
+  Answer.create!(content: row["answer_2_content"], question_id: question.id)
+  Answer.create!(content: row["answer_3_content"], question_id: question.id)
+  Answer.create!(content: row["answer_4_content"], question_id: question.id)
+end

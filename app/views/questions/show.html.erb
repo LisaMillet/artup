@@ -1,1 +1,5 @@
 <h1>All questions</h1>
+<%= simple_form_for [current_user.current_journey, @user_journey_answers] do |f| %>
+  <%= f.input :answer, collection: @questions.answers, as: :radio_button %>
+  <%= f.submit %>
+<% end %>

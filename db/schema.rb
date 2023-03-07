@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_06_170138) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_07_140401) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -59,13 +59,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_06_170138) do
     t.index ["piece_id"], name: "index_questions_on_piece_id"
   end
 
-  create_table "user_answers", force: :cascade do |t|
+  create_table "user_journey_answers", force: :cascade do |t|
     t.bigint "answer_id", null: false
     t.bigint "user_journey_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["answer_id"], name: "index_user_answers_on_answer_id"
-    t.index ["user_journey_id"], name: "index_user_answers_on_user_journey_id"
+    t.index ["answer_id"], name: "index_user_journey_answers_on_answer_id"
+    t.index ["user_journey_id"], name: "index_user_journey_answers_on_user_journey_id"
   end
 
   create_table "user_journeys", force: :cascade do |t|
@@ -91,8 +91,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_06_170138) do
   add_foreign_key "journey_pieces", "journeys"
   add_foreign_key "journey_pieces", "pieces"
   add_foreign_key "questions", "pieces"
-  add_foreign_key "user_answers", "answers"
-  add_foreign_key "user_answers", "user_journeys"
+  add_foreign_key "user_journey_answers", "answers"
+  add_foreign_key "user_journey_answers", "user_journeys"
   add_foreign_key "user_journeys", "journeys"
   add_foreign_key "user_journeys", "users"
 end

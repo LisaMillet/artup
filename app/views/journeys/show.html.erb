@@ -1,2 +1,4 @@
 <h1> <%= @journey.name %></h1>
 <p><%= @journey.description %></p>
+
+<%= link_to 'commencer la visite',  journey_user_journeys_path(@journey), data: {turbo_method: :post}%>

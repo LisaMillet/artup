@@ -1,5 +1,5 @@
 class AnswersController < ApplicationController
-  def
+  def 
 
   end
 end

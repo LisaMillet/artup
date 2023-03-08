@@ -1,2 +1,6 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<h1>Bienvenue sur Artup</h1>
+
+<h2>Voici les parcours du Louvre :</h2>
+<% @journeys.each do |journey| %>
+<%= link_to journey.name, journey_path(journey) %>
+<% end %>

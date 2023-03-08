@@ -11,7 +11,7 @@ class UserJourneysController < ApplicationController
     @user_journey.user = current_user
     authorize @user_journey
     if @user_journey.save
-      redirect_to user_journey_path(@user_journey)
+      redirect_to user_journey_piece_path(@user_journey, @user_journey.next_piece)
     else
       render root_path, status: :unprocessable_entity
     end

@@ -8,7 +8,7 @@
   <% @user_journey.pieces.each do |piece| %>
     <%= piece.name %>
   <% end %>
-  <%= link_to 'Continuer la visite', user_journey_piece_path(@user_journey, @user_journey.next_piece) %>
+  <%= link_to 'Continuer la visite', user_journey_piece_path(@user_journey.next_user_journey_piece) %>
 
   <%= link_to 'Quitter la visite', quit_path(@user_journey), data:{turbo_method: :patch}  %>
 

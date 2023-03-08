@@ -14,7 +14,8 @@ class UserJourneysController < ApplicationController
       session[:current_user_journey_id] = @user_journey.id
       redirect_to question_path(@user_journey.pieces.first.questions.first)
     else
-      render root_path, status: :unprocessable_entity
+      render :show
+      # redirect_to journey_path(@journey)
     end
   end
 

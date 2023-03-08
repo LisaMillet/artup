@@ -14,8 +14,8 @@ filepath = "#{Rails.root.join('db', 'pieces.csv')}"
 file = File.read(filepath, encoding: 'bom|utf-8')
 
 csv = CSV.parse(file, headers: :first_row, col_sep: ';')
-csv.first(1).each do |row|
-  piece = Piece.create!(name: row["name"], description: row["description"])
+csv.each do |row|
+  piece = Piece.create!(name: row["name"], description: row["description"], status: row["status"])
   # photo attachment
   if row["image"]
 
@@ -25,8 +25,12 @@ csv.first(1).each do |row|
   end
 end
 
+filepath = "#{Rails.root.join('db', 'journeys.csv')}"
+# filepath = "/home/bourrm/code/LisaMillet/artup/db/pieces.csv"
+file = File.read(filepath, encoding: 'bom|utf-8')
+
 csv = CSV.parse(file, headers: :first_row, col_sep: ';')
-csv.first(1).each do |row|
+csv.each do |row|
   journey = Journey.create!(name: row["name"], description: row["description"])
   # photo attachment
   if row["image"]
@@ -57,8 +61,8 @@ csv.each do |row|
 end
 
 user = User.create!(email: "bob@mail.com", password: "mdpmdp")
-journey = Journey.create!(name: "beyonce", discount: 20)
+beyonce = Journey.find_by(name: "Parcours Beyonce & Jay Z")
 Piece.all.each do |p|
-  JourneyPiece.create!(piece: p, journey: journey)
+  JourneyPiece.create!(piece: p, journey: beyonce)
 end
-UserJourney.create!(user: user, journey: journey)
+# UserJourney.create!(user: user, journey: beyonce)

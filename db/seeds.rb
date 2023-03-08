@@ -25,7 +25,7 @@ csv.each do |row|
   end
 end
 
-filepath = "/home/bourrm/code/LisaMillet/artup/db/journeys.csv"
+filepath = "#{Rails.root.join('db', 'journeys.csv')}"
 file = File.read(filepath, encoding: 'bom|utf-8')
 
 csv = CSV.parse(file, headers: :first_row, col_sep: ';')

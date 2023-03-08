@@ -1,6 +1,6 @@
 class UserJourneyAnswer < ApplicationRecord
   belongs_to :answer
-  has_one :piece, through: :answer
-
-  belongs_to :user_journey
+  belongs_to :user_journey_piece
+  
+  has_one :piece, through: :user_journey_piece
 end

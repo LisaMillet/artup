@@ -78,3 +78,9 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+#cloudinary token protection
+gem "dotenv-rails", groups: [:development, :test]
+
+#install cloudinary
+gem "cloudinary"

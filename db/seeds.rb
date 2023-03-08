@@ -1,5 +1,5 @@
 require "open-uri"
-
+puts "Destroying everything"
 Answer.destroy_all
 Question.destroy_all
 Piece.destroy_all
@@ -8,7 +8,7 @@ UserJourney.destroy_all
 User.destroy_all
 
 require "csv"
-
+puts "Creating Pieces"
 filepath = "#{Rails.root.join('db', 'pieces.csv')}"
 # filepath = "/home/bourrm/code/LisaMillet/artup/db/pieces.csv"
 file = File.read(filepath, encoding: 'bom|utf-8')

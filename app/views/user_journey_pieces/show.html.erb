@@ -1,6 +1,6 @@
 <% if @user_journey_piece.locked? %>
-  <h1>ici le QR Code</h1>
-  <%= link_to 'retour', user_journey_path(@user_journey) %>
+  <h1> <% link_to 'ici le QR Code', unlock_user_journey_piece_path(@user_journey_piece)%> </h1>
+  <%= link_to 'retour', user_journey_path(@user_journey_piece.user_journey) %>
 <% elsif @user_journey_piece.revealed? %>
   <%= render 'user_journey_pieces/show_with_media', piece: @user_journey_piece.piece, user_journey: @user_journey_piece.user_journey %>
 <% end %>

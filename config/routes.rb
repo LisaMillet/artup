@@ -7,10 +7,13 @@ Rails.application.routes.draw do
   end
   resources :user_journeys, only: %i[show create]
 
-  resources :user_journey_pieces, only: :show do
+  resources :user_journey_pieces, only: %i[show] do
+    member do
+      post :unlock
+    end
     resources :user_journey_answers, only: %i[create]
   end
-  
+
   resources :questions, only: :show
   resources :pieces, only: :show
   patch 'user_journeys/:id/quit', to: 'user_journeys#quit', as: 'quit'

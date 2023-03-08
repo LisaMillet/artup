@@ -15,6 +15,6 @@ Rails.application.routes.draw do
   end
 
   resources :questions, only: :show
-  resources :pieces, only: :show
+  # resources :pieces, only: :show
   patch 'user_journeys/:id/quit', to: 'user_journeys#quit', as: 'quit'
 end

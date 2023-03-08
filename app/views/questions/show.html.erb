@@ -2,7 +2,7 @@
   <h1 class="question_number">Question #1 :</h1>
 
     <%= simple_form_for [@user_journey_piece, @user_journey_answer] do |f| %>
-      <%= f.input :answer_id, collection: @question.answers.pluck(:content, :id), as: :check_boxes, label: @question.content, input_html: { class: 'answers_css' }, item_wrapper_class: 'form_wrapper'%>
+      <%= f.input :answer_id, collection: @question.answers.pluck(:content, :id), as: :check_boxes, label: @question.content, input_html: { class: 'answers_css' }, item_wrapper_class: 'form_wrapper' %>
     <div class="text-center">
       <%= f.submit 'Valider ma réponse', class: 'submit_button'%>
     </div>

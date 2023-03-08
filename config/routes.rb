@@ -5,10 +5,12 @@ Rails.application.routes.draw do
   resources :journeys, only: :show do
     resources :user_journeys, only: :create
   end
-  resources :user_journeys, only: %i[show create] do
+  resources :user_journeys, only: %i[show create]
+
+  resources :user_journey_pieces, only: :show do
     resources :user_journey_answers, only: %i[create]
-    resources :pieces, only: :show, controller: 'user_journeys/pieces'
   end
+  
   resources :questions, only: :show
   resources :pieces, only: :show
   patch 'user_journeys/:id/quit', to: 'user_journeys#quit', as: 'quit'

@@ -11,7 +11,8 @@ class UserJourneysController < ApplicationController
     @user_journey.user = current_user
     authorize @user_journey
     if @user_journey.save
-      redirect_to user_journey_piece_path(@user_journey, @user_journey.next_piece)
+      session[:current_user_journey_id] = @user_journey.id
+      redirect_to question_path(@user_journey.pieces.first.questions.first)
     else
       render root_path, status: :unprocessable_entity
     end

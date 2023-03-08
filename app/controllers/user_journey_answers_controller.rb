@@ -4,5 +4,6 @@ class UserJourneyAnswersController < ApplicationController
     @answer = Answer.find(params[:user_journey_answer][:answer_id])
     @user_journey_answer = UserJourneyAnswer.create(user_journey: @user_journey, answer: @answer)
     redirect_to user_journey_path(@user_journey)
+    authorize @user_journey_answer
   end
 end

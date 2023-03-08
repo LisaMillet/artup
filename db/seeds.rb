@@ -25,8 +25,7 @@ csv.each do |row|
   end
 end
 
-filepath = "#{Rails.root.join('db', 'journeys.csv')}"
-# filepath = "/home/bourrm/code/LisaMillet/artup/db/pieces.csv"
+filepath = "/home/bourrm/code/LisaMillet/artup/db/journeys.csv"
 file = File.read(filepath, encoding: 'bom|utf-8')
 
 csv = CSV.parse(file, headers: :first_row, col_sep: ';')
@@ -36,7 +35,7 @@ csv.each do |row|
   if row["image"]
 
     file = URI.open(row["image"])
-    journey.photo.attach(io: file, filename: "#{piece.name}.png", content_type: "image/png")
+    journey.photo.attach(io: file, filename: "#{journey.name}.png", content_type: "image/png")
     journey.save!
   end
 end

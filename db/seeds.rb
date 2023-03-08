@@ -1,3 +1,5 @@
+require "open-uri"
+
 Answer.destroy_all
 Question.destroy_all
 Piece.destroy_all
@@ -13,9 +15,26 @@ file = File.read(filepath, encoding: 'bom|utf-8')
 
 csv = CSV.parse(file, headers: :first_row, col_sep: ';')
 csv.first(1).each do |row|
-  Piece.create!(row)
-  # piece = Piece.create!(name: row["name"], description: row["description"])
+  piece = Piece.create!(name: row["name"], description: row["description"])
   # photo attachment
+  if row["image"]
+
+    file = URI.open(row["image"])
+    piece.photo.attach(io: file, filename: "#{piece.name}.png", content_type: "image/png")
+    piece.save!
+  end
+end
+
+csv = CSV.parse(file, headers: :first_row, col_sep: ';')
+csv.first(1).each do |row|
+  journey = Journey.create!(name: row["name"], description: row["description"])
+  # photo attachment
+  if row["image"]
+
+    file = URI.open(row["image"])
+    journey.photo.attach(io: file, filename: "#{piece.name}.png", content_type: "image/png")
+    journey.save!
+  end
 end
 
 filepath = "#{Rails.root.join('db', 'questions.csv')}"

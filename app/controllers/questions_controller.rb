@@ -6,6 +6,5 @@ class QuestionsController < ApplicationController
     @user_journey_piece = UserJourneyPiece.find_by(piece: piece, user_journey: @user_journey)
     @user_journey_answer = UserJourneyAnswer.new
     authorize @question
-    raise
   end
 end

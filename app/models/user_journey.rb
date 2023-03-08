@@ -8,17 +8,19 @@ class UserJourney < ApplicationRecord
 
   after_create :create_user_journey_pieces
 
-  def answered_pieces
-    user_journey_answers.map do |user_journey_answer|
-      user_journey_answer.piece
-    end
-  end
+  # def answered_pieces
+  #   user_journey_pieces.
+  #   user_journey_answers.map do |user_journey_answer|
+  #     user_journey_answer.piece
+  #   end
+  # end
 
-  def next_piece
-    pieces_left = pieces.reject do |piece|
-      answered_pieces.include?(piece)
-    end
-    pieces_left.first
+  def next_user_journey_piece
+    user_journey_pieces.locked.first
+    # pieces_left = pieces.reject do |piece|
+    #   answered_pieces.include?(piece)
+    # end
+    # pieces_left.first
   end
 
   private

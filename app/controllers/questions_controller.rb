@@ -3,5 +3,6 @@ class QuestionsController < ApplicationController
     @question = Question.find(params[:id])
     @user_journey_answer = UserJourneyAnswer.new
     authorize @question
+    raise
   end
 end

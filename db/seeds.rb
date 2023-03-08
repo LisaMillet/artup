@@ -14,7 +14,7 @@ filepath = "#{Rails.root.join('db', 'pieces.csv')}"
 file = File.read(filepath, encoding: 'bom|utf-8')
 
 csv = CSV.parse(file, headers: :first_row, col_sep: ';')
-csv.first(1).each do |row|
+csv.each do |row|
   piece = Piece.create!(name: row["name"], description: row["description"])
   # photo attachment
   if row["image"]
@@ -25,14 +25,17 @@ csv.first(1).each do |row|
   end
 end
 
+filepath = "/home/bourrm/code/LisaMillet/artup/db/journeys.csv"
+file = File.read(filepath, encoding: 'bom|utf-8')
+
 csv = CSV.parse(file, headers: :first_row, col_sep: ';')
-csv.first(1).each do |row|
+csv.each do |row|
   journey = Journey.create!(name: row["name"], description: row["description"])
   # photo attachment
   if row["image"]
 
     file = URI.open(row["image"])
-    journey.photo.attach(io: file, filename: "#{piece.name}.png", content_type: "image/png")
+    journey.photo.attach(io: file, filename: "#{journey.name}.png", content_type: "image/png")
     journey.save!
   end
 end

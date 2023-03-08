@@ -1,10 +1,10 @@
-<div class="container">
+<div class="container w-400 question-form">
   <h1 class="question_number">Question #1 :</h1>
 
-  <div class="form_css">
     <%= simple_form_for [current_user.current_user_journey, @user_journey_answer] do |f| %>
-      <%= f.input :answer_id, collection: @question.answers.pluck(:content, :id), as: :radio_buttons, label: @question.content %>
+      <%= f.input :answer_id, collection: @question.answers.pluck(:content, :id), as: :check_boxes, label: @question.content, input_html: { class: 'answers_css' }, item_wrapper_class: 'form_wrapper'%>
+    <div class="text-center">
       <%= f.submit 'Valider ma réponse', class: 'submit_button'%>
+    </div>
     <% end %>
-  </div>
 </div>

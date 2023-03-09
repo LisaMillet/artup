@@ -2,8 +2,9 @@
 <% if current_user && policy(@user_journey).quit? == true %>
   <h1>Bienvenue <%= @user_journey.user.first_name %></h1>
 
+
   <p>votre parcours <%= @user_journey.journey.name %></p>
-<p><%= @user_journey.score %> / <%= @user_journey.total_score %></p>
+  <p><%= @user_journey.score %> / <%= @user_journey.total_score %></p>
 
   <div class="card-journey">
     <% @user_journey.pieces.each do |piece| %>
@@ -18,7 +19,7 @@
   </div>
 
 </div>
-  <%= link_to 'Continuer la visite', user_journey_piece_path(@user_journey.next_user_journey_piece) %>
+  <%= link_to 'Continuer la visite', user_journey_piece_path(@user_journey.next_user_journey_piece) unless @user_journey.next_user_journey_piece.nil? %>
 
   <%= link_to 'Quitter la visite', quit_path(@user_journey), data:{turbo_method: :patch}  %>
 

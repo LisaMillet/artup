@@ -4,11 +4,8 @@
 
 <div class="card-journey">
   <% @journeys.each do |journey| %>
-    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-    <div class="card-journey-infos">
-      <div>
-        <h2> <%= link_to journey.name, journey_path(journey) %></h2>
-      </div>
+    <div class="card-journey-infos" style="background-image: url('https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg')">
+      <h2> <%= link_to journey.name, journey_path(journey) %></h2>
     </div>
   <% end %>
 </div>

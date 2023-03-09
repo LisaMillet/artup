@@ -33,6 +33,10 @@ class UserJourney < ApplicationRecord
     pieces.joins(:questions).count
   end
 
+  def revealed?(piece)
+    user_journey_pieces.find_by(piece: piece).revealed?
+  end
+  
   def progression
     (100.to_f / questions.count) * answers.count
   end

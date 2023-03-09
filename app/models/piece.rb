@@ -5,4 +5,7 @@ class Piece < ApplicationRecord
 
   enum status: [:locked, :waiting_for_answer]
   has_one_attached :photo
+  has_one_attached :prod_qr_code
+  has_one_attached :dev_qr_code
+
 end

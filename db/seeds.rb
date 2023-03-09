@@ -63,4 +63,14 @@ beyonce = Journey.find_by(name: "Parcours Beyonce & Jay Z")
 Piece.all.each do |p|
   JourneyPiece.create!(piece: p, journey: beyonce)
 end
+
+rennaissance = Journey.find_by(name: "Parcours œuvre de la Rennaissance")
+Piece.all.each do |p|
+  JourneyPiece.create!(piece: p, journey: rennaissance)
+end
+
+chef_doeuvre = Journey.find_by(name: "Parcours les Chefs-d'œuvres du Louvre")
+Piece.all.each do |p|
+  JourneyPiece.create!(piece: p, journey: chef_doeuvre)
+end
 # UserJourney.create!(user: user, journey: beyonce)

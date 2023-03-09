@@ -1,5 +1,4 @@
 <div class="container w-400 question-form">
-  <h1 class="question_number">Question :</h1>
 
     <%= simple_form_for [@user_journey_piece, @user_journey_answer] do |f| %>
       <%= f.input :answer_id, collection: @question.answers.pluck(:content, :id), as: :radio_buttons, label: @question.content, input_html: { class: 'answers_css' }, item_wrapper_class: 'form_wrapper' %>

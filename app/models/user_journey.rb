@@ -6,6 +6,7 @@ class UserJourney < ApplicationRecord
   has_many :pieces, through: :user_journey_pieces
   has_many :user_journey_answers, through: :user_journey_pieces
   has_many :answers, through: :user_journey_answers
+  has_many :questions, through: :pieces
 
   after_create :create_user_journey_pieces
 
@@ -17,7 +18,7 @@ class UserJourney < ApplicationRecord
   # end
 
   def next_user_journey_piece
-    user_journey_pieces.locked.first
+    user_journey_pieces.where(status: [:waiting_for_answer, :locked]).first
     # pieces_left = pieces.reject do |piece|
     #   answered_pieces.include?(piece)
     # end
@@ -35,6 +36,10 @@ class UserJourney < ApplicationRecord
   def revealed?(piece)
     user_journey_pieces.find_by(piece: piece).revealed?
   end
+  
+  def progression
+    (100.to_f / questions.count) * answers.count
+  end
 
   private
 
@@ -43,5 +48,4 @@ class UserJourney < ApplicationRecord
       UserJourneyPiece.create(piece: piece, user_journey: self, status: piece.status)
     end
   end
-
 end

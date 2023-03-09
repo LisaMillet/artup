@@ -2,6 +2,7 @@
 <% if current_user && policy(@user_journey).quit? == true %>
   <h1>Bienvenue <%= @user_journey.user.first_name %></h1>
 
+
   <p>votre parcours <%= @user_journey.journey.name %></p>
   <p><%= @user_journey.score %> / <%= @user_journey.total_score %></p>
 

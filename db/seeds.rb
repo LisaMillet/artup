@@ -32,8 +32,7 @@ csv = CSV.parse(file, headers: :first_row, col_sep: ';')
 csv.each do |row|
   journey = Journey.create!(name: row["name"], description: row["description"])
   # photo attachment
-  if row["image"]
-
+  if row["image"].present?
     file = URI.open(row["image"])
     journey.photo.attach(io: file, filename: "#{journey.name}.png", content_type: "image/png")
     journey.save!

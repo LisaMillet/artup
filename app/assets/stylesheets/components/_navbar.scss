@@ -1,6 +1,7 @@
 .navbar-lewagon {
-  justify-content: space-between;
   background: white;
+  justify-content: flex-start;
+  padding: 5px;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -9,4 +10,36 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.navbar-progress{
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#progress-bar-title{
+  font-family:'Times New Roman', Times, serif;
+  font-size: 25px;
+}
+
+#progress-bar{
+  height: 30px;
+  width: 80%;
+  -webkit-appearance: none;
+  border-radius: 1em;
+  overflow: hidden;
+
+  &::-webkit-progress-value {
+    background-color: rgb(242, 196, 86);
+    border-radius: 1em;
+    border: 1px solid rgb(45, 34, 9);
+  }
+
+  &::-webkit-progress-bar {
+     background-color: rgb(45, 34, 9);
+     border: 1px solid rgb(45, 34, 9);
+  }
+
 }

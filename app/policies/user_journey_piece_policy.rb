@@ -5,4 +5,8 @@ class UserJourneyPiecePolicy < ApplicationPolicy
   def show?
     record.user == user
   end
+
+  def unlock?
+    record.user == user
+  end
 end

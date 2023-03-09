@@ -3,8 +3,7 @@
 
 <div class="card-journey">
   <% @journey.pieces.each do |piece| %>
-    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-    <div class="card-journey-infos">
+    <div class="card-piece-infos done" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path piece.photo.key, height: 200, crop: :fill %>)">
       <div>
         <h2> <%= piece.name %></h2>
         <p> <%= piece.artist %></p>

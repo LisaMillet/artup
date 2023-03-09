@@ -2,7 +2,6 @@
   width: 100vw;
   overflow: hidden;
   background: white;
-  box-shadow: 0 0 15px $gray;
 }
 
 .card-journey > img {
@@ -30,4 +29,34 @@
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
+}
+
+.card-piece {
+  width: 100vw;
+  overflow: hidden;
+  background: white;
+}
+
+.card-piece-infos {
+  height: 200px;
+  margin-bottom: 20px;
+  background-size: cover;
+  background-position: center;
+
+  > div {
+    backdrop-filter: blur(8px);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+  }
+}
+
+.done {
+  > div {
+    backdrop-filter: blur(0px);
+  }
 }

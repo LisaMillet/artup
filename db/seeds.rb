@@ -24,7 +24,7 @@ csv.each do |row|
     piece.save!
   end
 end
-
+puts "Creating journeys"
 filepath = "#{Rails.root.join('db', 'journeys.csv')}"
 file = File.read(filepath, encoding: 'bom|utf-8')
 
@@ -39,7 +39,7 @@ csv.each do |row|
     journey.save!
   end
 end
-
+puts "Creating questions"
 filepath = "#{Rails.root.join('db', 'questions.csv')}"
 # filepath = "/home/bourrm/code/LisaMillet/artup/db/pieces.csv"
 file = File.read(filepath, encoding: 'bom|utf-8')
@@ -58,8 +58,10 @@ csv.each do |row|
     Answer.find_by(content: row["correct_answer"]).update(right_answer: true) if Answer.find_by(content: row["correct_answer"])
   end
 end
+puts "Creating user"
+user = User.create!(first_name: 'Alexia', last_name: 'De Google', email: "beyonce@artup.com", password: "mdpmdp")
 
-user = User.create!(email: "bob@mail.com", password: "mdpmdp")
+puts "Puting Pieces dans journeys"
 beyonce = Journey.find_by(name: "Parcours Beyonce & Jay Z")
 Piece.all.each do |p|
   JourneyPiece.create!(piece: p, journey: beyonce)

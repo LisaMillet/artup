@@ -31,6 +31,11 @@ class UserJourney < ApplicationRecord
   def total_score
     pieces.joins(:questions).count
   end
+
+  def revealed?(piece)
+    user_journey_pieces.find_by(piece: piece).revealed?
+  end
+
   private
 
   def create_user_journey_pieces

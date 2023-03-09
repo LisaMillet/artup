@@ -1,0 +1,31 @@
+.btn-empty {
+  background-color: transparent;
+  color: $gray;
+  border: 1px solid $gray;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.btn-empty:hover {
+  opacity: 1;
+}
+
+
+.btn-filled {
+  background-color: $gray;
+  color: $light-gray;
+  border: 1px solid $light-gray;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.btn-filled:hover {
+  opacity: 1;
+  border: 1px solid $gray;
+}

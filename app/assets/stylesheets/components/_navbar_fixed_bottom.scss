@@ -1,0 +1,27 @@
+.icone {
+  text-align: center;
+  font-size: 25px;
+  letter-spacing: 60px;
+  text-decoration: none;
+  color: black;
+}
+
+.navbar-background {
+  background: white;
+  padding: 30px;
+  border-radius: 4px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.1);
+  width: 95%;
+  text-align: justify;
+  border-radius: 50px;
+  padding: 5px;
+
+}
+
+.navbar-nav {
+  flex-direction: initial!important
+}
+
+#nav-btn i {
+  width: 50%
+}

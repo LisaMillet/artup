@@ -5,6 +5,7 @@ class UserJourney < ApplicationRecord
   has_many :user_journey_pieces
   has_many :pieces, through: :user_journey_pieces
   has_many :user_journey_answers, through: :user_journey_pieces
+  has_many :answers, through: :user_journey_answers
 
   after_create :create_user_journey_pieces
 
@@ -23,6 +24,13 @@ class UserJourney < ApplicationRecord
     # pieces_left.first
   end
 
+  def score
+    answers.where(right_answer: true).count
+  end
+
+  def total_score
+    pieces.joins(:questions).count
+  end
   private
 
   def create_user_journey_pieces

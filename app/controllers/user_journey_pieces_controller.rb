@@ -12,6 +12,7 @@ class UserJourneyPiecesController < ApplicationController
 
   def unlock
     @user_journey_piece = UserJourneyPiece.find(params[:id])
+    authorize @user_journey_piece
     @piece = @user_journey_piece.piece
     @piece.waiting_for_answer!
     redirect_to question_path(@piece.questions.first)

@@ -3,16 +3,36 @@
   <h1>Bienvenue <%= @user_journey.user.first_name %></h1>
 
   <p>votre parcours <%= @user_journey.journey.name %></p>
+<p><%= @user_journey.score %> / <%= @user_journey.total_score %></p>
 
-  <p>Voici la liste des oeuvres à voir</p>
-  <% @user_journey.pieces.each do |piece| %>
-    <%= piece.name %>
-  <% end %>
+  <div class="card-journey">
+    <% @user_journey.pieces.each do |piece| %>
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+      <div class="card-journey-infos">
+        <div>
+          <h2> <%= piece.name %></h2>
+          <p> <%= piece.artist %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+</div>
   <%= link_to 'Continuer la visite', user_journey_piece_path(@user_journey.next_user_journey_piece) %>
 
   <%= link_to 'Quitter la visite', quit_path(@user_journey), data:{turbo_method: :patch}  %>
 
 <% elsif current_user && policy(@user_journey).quit? == false %>
-  <p>voici le recap de votre parcours</p>
-
+  <p>Voici le recap final de votre parcours</p>
+  <div class="card-journey">
+    <% @user_journey.pieces.each do |piece| %>
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+      <div class="card-journey-infos">
+        <div>
+          <h2> <%= piece.name %></h2>
+          <p> <%= piece.artist %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
 <% end %>

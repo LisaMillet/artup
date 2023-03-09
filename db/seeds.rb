@@ -15,7 +15,7 @@ file = File.read(filepath, encoding: 'bom|utf-8')
 
 csv = CSV.parse(file, headers: :first_row, col_sep: ';')
 csv.each do |row|
-  piece = Piece.create!(name: row["name"], description: row["description"], artist: row["artist"], status: row["status"], slug: row["slug"])
+  piece = Piece.create!(name: row["name"], description: row["description"], materials_techniques: row["materials_techniques"], media: row["media"], creation_year: row["creation_year"], artist: row["artist"], status: row["status"], slug: row["slug"])
   # photo attachment
   if row["image"]
 
@@ -24,19 +24,19 @@ csv.each do |row|
     piece.save!
   end
 
-  if row["dev_qr_code"]
+  # if row["dev_qr_code"]
 
-    file = URI.open(row["dev_qr_code"])
-    piece.photo.attach(io: file, filename: "dev_#{piece.slug}.png", content_type: "image/png")
-    piece.save!
-  end
+  #   file = URI.open(row["dev_qr_code"])
+  #   piece.photo.attach(io: file, filename: "dev_#{piece.slug}.png", content_type: "image/png")
+  #   piece.save!
+  # end
 
-  if row["prod_qr_code"]
+  # if row["prod_qr_code"]
 
-    file = URI.open(row["prod_qr_code"])
-    piece.photo.attach(io: file, filename: "prod_#{piece.slug}.png", content_type: "image/png")
-    piece.save!
-  end
+  #   file = URI.open(row["prod_qr_code"])
+  #   piece.photo.attach(io: file, filename: "prod_#{piece.slug}.png", content_type: "image/png")
+  #   piece.save!
+  # end
 
 end
 puts "Creating journeys"

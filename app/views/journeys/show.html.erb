@@ -1,3 +1,7 @@
+<% content_for :meta_title, "#{@journey.name} is on #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, @journey.description %>
+<% content_for :meta_image, cl_image_path(@journey.photo.key) if @journey.photo.attached? %>
+
 <h1> <%= @journey.name %></h1>
 <p><%= @journey.description %></p>
 

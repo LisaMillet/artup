@@ -1,18 +1,22 @@
 .navbar-lewagon {
-  background: $pink;
+  background: $green-gray;
   justify-content: flex-start;
   padding: 5px;
   position: fixed;
   width: 100%;
-  height: 60px;
+  height: 90px;
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+// .navbar-lewagon .navbar-brand img {
+//   width: 40px;
+// }
+
+.navbar-lewagon h1 {
+  color: $dark-green;
 }
 
 .navbar-progress{

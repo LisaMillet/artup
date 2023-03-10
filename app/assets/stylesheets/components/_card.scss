@@ -1,6 +1,7 @@
 .card-journey {
   overflow: hidden;
   background: transparent;
+  width: 100%;
   a {
     text-decoration: none;
   }
@@ -26,7 +27,6 @@
 }
 
 .card-piece {
-  width: 100vw;
   overflow: hidden;
   background: transparent;
 }

@@ -2,7 +2,7 @@
   <div class="img-big" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path @user_journey_piece.piece.photo.key, height: 800 %>)">
     <div data-controller="scanner" id="reader" width="80vw"></div>
   </div>
-  <%= link_to 'retour', user_journey_path(@user_journey_piece.user_journey) %>
+  <%= link_to 'retour', user_journey_path(@user_journey_piece.user_journey), class: 'btn btn-empty' %>
 
 
 

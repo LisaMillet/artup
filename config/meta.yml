@@ -1,0 +1,5 @@
+meta_name: "Artup"
+meta_title: "Artup - Visitez le Louvre autrement"
+meta_description: "Avec Artup découvrez le Louvre de façon ludique et apprenez-en plus sur les oeuvres majeurs de ce musée iconique."
+meta_image: "Artup-Louvre.png" # should exist in `app/assets/images/`
+twitter_account: "@HistoireArtisan"   # required for Twitter Cards

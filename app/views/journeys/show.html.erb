@@ -2,8 +2,8 @@
 <% content_for :meta_description, @journey.description %>
 <% content_for :meta_image, cl_image_path(@journey.photo.key) if @journey.photo.attached? %>
 
-<div><h1> <%= @journey.name %></h1></div>
-<p><%= @journey.description %></p>
+<div class='container w-100'><h1> <%= @journey.name %></h1></div>
+<p class='container w-100'><%= @journey.description %></p>
 <div class='d-flex justify-content-center my-2'><%= link_to 'Commencer la visite',  journey_user_journeys_path(@journey), data: {turbo_method: :post}, class: 'btn btn-filled'%></div>
 
 <% @journey.pieces.each do |piece| %>

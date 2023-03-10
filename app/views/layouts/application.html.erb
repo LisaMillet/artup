@@ -37,7 +37,10 @@
 
   <body class="background">
     <%= render 'shared/navbar' %>
-    <%= yield %>
+    <div style="padding-top: 60px;">
+    <%# this padding is mandatory for navbar fixed position %>
+      <%= yield %>
+    </div>
 
     <%= render 'shared/navbar_fixed_bottom' %>
     <%= render 'shared/footer' %>

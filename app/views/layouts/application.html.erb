@@ -49,12 +49,13 @@
     <link rel="manifest" href="<%= asset_path 'manifest.json' %>">
 
     <%= render 'shared/ios_pwa_links' %>
+    <style> @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@600&family=Exo+2:wght@200;300&display=swap'); </style>
 
   </head>
 
   <body class="background">
     <%= render 'shared/navbar' %>
-    <div style="padding-top: 80px;">
+    <div style="padding-top: 90px; padding-bottom: 30px;">
     <%# this padding is mandatory for navbar fixed position %>
       <%= yield %>
     </div>

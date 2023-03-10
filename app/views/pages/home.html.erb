@@ -1,6 +1,10 @@
-<h1>Bienvenue sur Artup</h1>
+<%# <h1>Bienvenue sur Artup</h1> %>
 
-<h2>Voici les parcours du Louvre :</h2>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://api-www.louvre.fr/sites/default/files/2021-03/la-grande-galerie.jpg);">
+  <div>
+    <h2>Découvrez le Louvre autrement grâce à nos parcours</h2>
+  </div>
+</div>
 
 <% @journeys.each do |journey| %>
   <div class="card-journey">
@@ -8,6 +12,7 @@
       <div class="card-journey-infos" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path journey.photo.key, height: 400, crop: :fill %>)">
         <div>
           <h2> <%= journey.name%></h2>
+          <button class='btn btn-empty-white'> Découvrir </button>
         </div>
       </div>
     <% end %>

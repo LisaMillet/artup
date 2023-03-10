@@ -3,7 +3,7 @@
     <%= simple_form_for [@user_journey_piece, @user_journey_answer] do |f| %>
       <%= f.input :answer_id, collection: @question.answers.pluck(:content, :id), as: :radio_buttons, label: @question.content, input_html: { class: 'answers_css' }, item_wrapper_class: 'form_wrapper' %>
     <div class="text-center">
-      <%= f.submit 'Valider ma réponse', class: 'submit_button'%>
+      <%= f.submit 'Valider ma réponse', class: 'btn btn-filled'%>
     </div>
     <% end %>
 </div>

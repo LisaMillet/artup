@@ -1,7 +1,7 @@
 .btn-empty {
   background-color: transparent;
-  color: $gray;
-  border: 1px solid $gray;
+  color: $brown;
+  border: 1px solid $brown;
   padding: 8px 24px;
   border-radius: 50px;
   font-weight: lighter;
@@ -15,9 +15,24 @@
 
 
 .btn-filled {
-  background-color: $gray;
-  color: $light-gray;
-  border: 1px solid $light-gray;
+  background-color: $brown;
+  color: $green-gray;
+  border: 1px solid $green-gray;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  transition: opacity 0.3s ease;
+}
+
+.btn-filled:hover {
+  border: 1px solid $brown;
+  background-color: $green-gray;
+}
+
+.btn-empty-white {
+  background-color: transparent;
+  color: $green-gray;
+  border: 1px solid $green-gray;
   padding: 8px 24px;
   border-radius: 50px;
   font-weight: lighter;
@@ -25,7 +40,6 @@
   transition: opacity 0.3s ease;
 }
 
-.btn-filled:hover {
+.btn-empty-white:hover {
   opacity: 1;
-  border: 1px solid $gray;
 }

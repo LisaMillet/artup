@@ -2,8 +2,9 @@
 <% content_for :meta_description, @journey.description %>
 <% content_for :meta_image, cl_image_path(@journey.photo.key) if @journey.photo.attached? %>
 
-<h1> <%= @journey.name %></h1>
+<div><h1> <%= @journey.name %></h1></div>
 <p><%= @journey.description %></p>
+<div><%= link_to 'commencer la visite',  journey_user_journeys_path(@journey), data: {turbo_method: :post}, class: 'btn btn-filled'%></div>
 
 <% @journey.pieces.each do |piece| %>
   <div class="card-journey">
@@ -15,5 +16,3 @@
       </div>
   </div>
 <% end %>
-
-<%= link_to 'commencer la visite',  journey_user_journeys_path(@journey), data: {turbo_method: :post}%>

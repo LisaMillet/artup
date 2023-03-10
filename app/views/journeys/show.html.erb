@@ -4,7 +4,7 @@
 
 <div><h1> <%= @journey.name %></h1></div>
 <p><%= @journey.description %></p>
-<div><%= link_to 'commencer la visite',  journey_user_journeys_path(@journey), data: {turbo_method: :post}, class: 'btn btn-filled'%></div>
+<div class='d-flex justify-content-center my-2'><%= link_to 'Commencer la visite',  journey_user_journeys_path(@journey), data: {turbo_method: :post}, class: 'btn btn-filled'%></div>
 
 <% @journey.pieces.each do |piece| %>
   <div class="card-journey">

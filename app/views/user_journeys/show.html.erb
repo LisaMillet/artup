@@ -1,14 +1,16 @@
 
 <% if current_user && policy(@user_journey).quit? == true %>
-  <h1>Bienvenue <%= @user_journey.user.first_name %></h1>
+  <div class='container w-100'>
+    <h1>Bienvenue <%= @user_journey.user.first_name %></h1>
+    <p>Votre parcours <%= @user_journey.journey.name %></p>
+    <p>Votre score : <strong><%= @user_journey.score %></strong> / <%= @user_journey.total_score %></p>
+    <div class='d-flex justify-content-center my-2'>
+      <%= link_to 'Continuer la visite', user_journey_piece_path(@user_journey.next_user_journey_piece), class: 'btn btn-filled me-1' %>
+      <%= link_to 'Quitter la visite', quit_path(@user_journey), data:{turbo_method: :patch}, class: 'btn btn-empty'  %>
+    </div>
+  </div>
 
-
-  <p>votre parcours <%= @user_journey.journey.name %></p>
-
-  <%= link_to 'Continuer la visite', user_journey_piece_path(@user_journey.next_user_journey_piece), class: 'btn btn-filled' %>
-  <%= link_to 'Quitter la visite', quit_path(@user_journey), data:{turbo_method: :patch}, class: 'btn btn-empty'  %>
-
-  <% @user_journey.pieces.each do |piece| %>
+  <% @user_journey.pieces.order(:id).each do |piece| %>
     <div class="card-piece">
         <div class="card-piece-infos <%= "done" if @user_journey.revealed?(piece) %>" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path piece.photo.key, height: 200, crop: :fill %>)">
           <div>
@@ -20,8 +22,8 @@
 <% end %>
 
 <% elsif current_user && policy(@user_journey).quit? == false %>
-    <p>Voici le recap final de votre parcours</p>
-    <% @user_journey.pieces.each do |piece| %>
+    <h1 class='container w-100'>Voici le recap final de votre parcours</h1>
+    <% @user_journey.pieces.order(:id).each do |piece| %>
       <div class="card-piece">
           <div class="card-piece-infos <%= "done" if @user_journey.revealed?(piece) %>" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path piece.photo.key, height: 200, crop: :fill %>)">
             <div>

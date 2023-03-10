@@ -1,40 +1,32 @@
 .card-journey {
   width: 100vw;
   overflow: hidden;
-  background: white;
+  background: transparent;
 }
 
-.card-journey > img {
-  width: 100vw;
-  height: 200px;
-  object-fit: cover;
-}
+.card-journey-infos {
+  height: 400px;
+  margin-bottom: 20px;
+  background-size: cover;
+  background-position: center;
 
-.card-journey h2 {
-  font-size: $medium-font;
-  font-weight: bold;
-  margin: 0;
-}
-
-.card-journey p {
-  font-size: $small-font;
-  opacity: .7;
-  margin: 0;
-}
-
-
-.card-journey .card-journey-infos {
-  padding: 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  position: relative;
+  > div {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    color: white;
+    text-decoration: none;
+  }
 }
 
 .card-piece {
   width: 100vw;
   overflow: hidden;
-  background: white;
+  background: transparent;
 }
 
 .card-piece-infos {

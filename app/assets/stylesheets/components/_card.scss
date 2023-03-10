@@ -1,8 +1,11 @@
 .card-journey {
-  width: 100vw;
   overflow: hidden;
   background: transparent;
+  a {
+    text-decoration: none;
+  }
 }
+
 
 .card-journey-infos {
   height: 400px;
@@ -19,7 +22,6 @@
     text-align: center;
     flex-direction: column;
     color: white;
-    text-decoration: none;
   }
 }
 

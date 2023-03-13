@@ -47,6 +47,10 @@
     align-items: center;
     flex-direction: column;
     color: $green-gray;
+    > p {
+      font-family: $body-font;
+      font-weight: 600;
+    }
   }
 }
 

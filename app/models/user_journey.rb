@@ -30,7 +30,7 @@ class UserJourney < ApplicationRecord
   end
 
   def discount
-    (((journey.(discount / 100) * score) / total_score) * 100).to_i
+    ((((journey.discount / 100) * score) / total_score) * 100).to_i
   end
 
   def total_score

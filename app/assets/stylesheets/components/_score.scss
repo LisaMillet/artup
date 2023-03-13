@@ -1,0 +1,55 @@
+.navbar-score{
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.score-bar{
+  background-color: transparent;
+  border: 1px solid $brown;
+  padding: 8px 24px;
+  border-radius: $border-radius;
+}
+
+.score-bar-title{
+  color: $brown;
+  font-size: 2rem;
+}
+
+.score-bar-result{
+  color: #755e02;
+  font-weight: bold;
+  margin-bottom: 0;
+  span {
+
+    font-size: 40px;
+  }
+
+}
+
+p.score-bar-legend {
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 0;
+  font-size: 11px;
+  color: #755e02;
+}
+
+.card-score {
+  width: 27%;
+  background: #bcb185;
+  padding: 10px;
+  &:nth-of-type(2) {
+    width: 40%;
+    background: #85773e;
+    transform: scale(1.08);
+    p {
+
+      color: $green-gray;
+    }
+  }
+}

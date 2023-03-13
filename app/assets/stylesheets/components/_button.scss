@@ -1,33 +1,33 @@
 .btn-empty {
   background-color: transparent;
-  color: $brown;
-  border: 1px solid $brown;
+  color: $dark-green;
+  border: 1px solid $dark-green;
   padding: 8px 24px;
-  border-radius: 50px;
+  border-radius: $border-radius;
   font-weight: 300;
   transition: opacity 0.3s ease;
 }
 
 .btn-empty:hover {
-  background-color: $brown;
+  background-color: $dark-green;
   color: $green-gray;
 }
 
 
 .btn-filled {
-  background-color: $brown;
+  background-color: $dark-green;
   color: $green-gray;
   border: 1px solid $green-gray;
   padding: 8px 24px;
-  border-radius: 50px;
+  border-radius: $border-radius;
   font-weight: 300;
   transition: opacity 0.3s ease;
 }
 
 .btn-filled:hover {
-  border: 1px solid $brown;
+  border: 1px solid $dark-green;
   background-color: $green-gray;
-  color: $brown;
+  color: $dark-green;
 }
 
 .btn-empty-white {
@@ -35,7 +35,7 @@
   color: $green-gray;
   border: 3px solid $green-gray;
   padding: 8px 24px;
-  border-radius: 50px;
+  border-radius: $border-radius;
   font-weight: 300;
   opacity: 1;
   transition: opacity 0.3s ease;

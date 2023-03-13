@@ -1,25 +1,65 @@
 
 <% if current_user && policy(@user_journey).quit? == true %>
   <div class='container w-100'>
-    <h1>Bienvenue <%= @user_journey.user.first_name %></h1>
-    <p>Votre parcours <%= @user_journey.journey.name %></p>
-    <p>Votre score : <strong><%= @user_journey.score %></strong> / <%= @user_journey.total_score %></p>
-    <div class='d-flex justify-content-center my-2'>
-      <%= link_to 'Continuer la visite', user_journey_piece_path(@user_journey.next_user_journey_piece), class: 'btn btn-filled me-1' %>
-      <%= link_to 'Quitter la visite', quit_path(@user_journey), data:{turbo_method: :patch}, class: 'btn btn-empty'  %>
+    <h1><%= @user_journey.journey.name %></h1>
+
+  <div class=" navbar-score">
+
+      <div class="card-score">
+        <i class="d-none fa-solid fa-palette score-bar-title"></i>
+        <p class='score-bar-result'><span><%=@user_journey.number_of_revealed%></span> / <%=@user_journey.number_of_pieces%></p>
+        <p class='score-bar-legend'>oeuvres découvertes</p>
+      </div>
+
+      <div class="card-score">
+        <i class="d-none fa-solid fa-trophy score-bar-title"></i>
+        <p class='score-bar-result'><span><%=@user_journey.score%></span> / <%=@user_journey.total_score%></p>
+        <p class='score-bar-legend'>questions <br> validées</p>
+      </div>
+
+      <div class="card-score">
+        <i class="d-none fa-solid fa-coins score-bar-title"></i>
+        <p class='score-bar-result'><span><%=@user_journey.discount%></span> %</p>
+        <p class='score-bar-legend'>réduction gagnée</p>
+      </div>
+
+  </div>
+
+    <div class='d-flex justify-content-center'>
+      <%= link_to 'Continuer la visite', user_journey_piece_path(@user_journey.next_user_journey_piece), class: 'btn btn-filled mb-3' %>
     </div>
   </div>
 
-  <% @user_journey.pieces.order(:id).each do |piece| %>
-    <div class="card-piece">
-        <div class="card-piece-infos <%= "done" if @user_journey.revealed?(piece) %>" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path piece.photo.key, height: 200, crop: :fill %>)">
-          <div>
-            <h2> <%= piece.name %></h2>
-            <p> <%= piece.artist %></p>
+  <div class="swiper" data-controller='swiper'>
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+
+      <% @user_journey.pieces.order(:id).each do |piece| %>
+        <div class="swiper-slide">
+          <div class="card-piece">
+            <div class="card-piece-infos <%= "done" if @user_journey.revealed?(piece) %>" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path piece.photo.key, height: 200, crop: :fill %>)">
+              <div>
+                <h2> <%= piece.name %></h2>
+                <p> <%= piece.artist %></p>
+              </div>
+            </div>
           </div>
         </div>
+      <% end %>
     </div>
-<% end %>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+
+    <!-- If we need scrollbar -->
+    <div class="swiper-scrollbar"></div>
+  </div>
+
+
 
 <% elsif current_user && policy(@user_journey).quit? == false %>
     <h1 class='container w-100'>Voici le recap final de votre parcours</h1>

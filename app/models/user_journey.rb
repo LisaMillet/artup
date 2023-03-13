@@ -29,6 +29,10 @@ class UserJourney < ApplicationRecord
     answers.where(right_answer: true).count
   end
 
+  def discount
+    (((journey.(discount / 100) * score) / total_score) * 100).to_i
+  end
+
   def total_score
     pieces.joins(:questions).count
   end
@@ -36,7 +40,15 @@ class UserJourney < ApplicationRecord
   def revealed?(piece)
     user_journey_pieces.find_by(piece: piece).revealed?
   end
-  
+
+  def number_of_revealed
+    user_journey_pieces.revealed.count
+  end
+
+  def number_of_pieces
+    pieces.count
+  end
+
   def progression
     (100.to_f / questions.count) * answers.count
   end

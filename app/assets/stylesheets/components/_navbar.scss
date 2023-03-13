@@ -25,29 +25,58 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  width: 100%;
 }
 
-#progress-bar-title{
-  font-family: $body-font;
-  font-size: 0.9rem;
-}
+// #progress-bar-title{
+//   font-family: $body-font;
+//   font-size: 0.9rem;
+// }
 
 #progress-bar{
-  height: 30px;
-  width: 80%;
+  height: 10px;
+  width: 100%;
   -webkit-appearance: none;
-  border-radius: 1em;
   overflow: hidden;
 
   &::-webkit-progress-value {
     background-color: $dark-green;
-    border-radius: 1em;
-    border: 1px solid $brown;
   }
 
   &::-webkit-progress-bar {
      background-color: $brown;
-     border: 1px solid $brown;
   }
 
 }
+
+// .navbar-score{
+//   flex-grow: 1;
+//   display: flex;
+//   flex-direction: row;
+//   align-items: center;
+// }
+
+// .score-bar-title{
+//   color: $brown;
+//   position: relative;
+//   top: 60px;
+//   left: -10px;
+//   top: 69px;
+//   left: -19px;
+//   font-size: 36px
+// }
+
+// .score-bar{
+//   background-color: transparent;
+//   border: 1px solid $brown;
+//   padding: 8px 24px;
+//   border-radius: 50px;
+// }
+
+// .score-bar-result{
+//   color: $brown;
+//   font-weight: 300;
+// }

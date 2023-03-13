@@ -4,7 +4,7 @@
   border: 1px solid $brown;
   padding: 8px 24px;
   border-radius: 50px;
-  font-weight: lighter;
+  font-weight: 300;
   transition: opacity 0.3s ease;
 }
 
@@ -20,7 +20,7 @@
   border: 1px solid $green-gray;
   padding: 8px 24px;
   border-radius: 50px;
-  font-weight: lighter;
+  font-weight: 300;
   transition: opacity 0.3s ease;
 }
 
@@ -33,14 +33,15 @@
 .btn-empty-white {
   background-color: transparent;
   color: $green-gray;
-  border: 1px solid $green-gray;
+  border: 3px solid $green-gray;
   padding: 8px 24px;
   border-radius: 50px;
-  font-weight: lighter;
-  opacity: 0.6;
+  font-weight: 300;
+  opacity: 1;
   transition: opacity 0.3s ease;
 }
 
 .btn-empty-white:hover {
-  opacity: 1;
+  opacity: 0.6;
+  border: 3px solid opacify($color: $green-gray, $amount: 0.6);
 }

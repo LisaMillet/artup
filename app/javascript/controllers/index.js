@@ -10,5 +10,17 @@ application.register("hello", HelloController)
 import ScannerController from "./scanner_controller"
 application.register("scanner", ScannerController)
 
+
 import SwiperController from "./swiper_controller"
 application.register("swiper", SwiperController)
+
+import QuestionController from "./question_controller"
+application.register("question", QuestionController)
+// Stimulus install
+// import { Application } from "@hotwired/stimulus"
+// import { definitionsFromContext } from "@hotwired/stimulus-webpack-helpers"
+
+// window.Stimulus = Application.start()
+// const context = require.context("./controllers", true, /\.js$/)
+// Stimulus.load(definitionsFromContext(context))
+// end of Stimulus install

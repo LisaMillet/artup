@@ -18,7 +18,6 @@ csv.each do |row|
   piece = Piece.create!(name: row["name"], description: row["description"], materials_techniques: row["materials_techniques"], media: row["media"], creation_year: row["creation_year"], artist: row["artist"], status: row["status"], slug: row["slug"])
   # photo attachment
   if row["image"]
-
     file = URI.open(row["image"])
     piece.photo.attach(io: file, filename: "#{piece.name}.png", content_type: "image/png")
     piece.save!
@@ -53,6 +52,7 @@ csv.each do |row|
     journey.save!
   end
 end
+
 puts "Creating questions"
 filepath = "#{Rails.root.join('db', 'questions.csv')}"
 # filepath = "/home/bourrm/code/LisaMillet/artup/db/pieces.csv"

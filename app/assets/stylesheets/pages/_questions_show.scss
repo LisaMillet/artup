@@ -39,3 +39,25 @@
   color: $green-gray;
   border: 2px solid $dark-green;
 }
+
+.answer-div {
+  cursor: pointer;
+  width: 100%;
+  font-family:'Times New Roman', Times, serif;
+  border-radius: 15px;
+  font-size: 20px;
+  padding: 0.1rem 0.5rem;
+  background-color: $green-gray;
+  color: $dark-green;
+  border: 2px solid $dark-green;
+  margin-right: 0.6rem;
+  margin-bottom: 0.4rem;
+  &.wrong-answer {
+    background-color: red;
+    color: white;
+  }
+  &.right-answer {
+    background-color: green;
+    color: white;
+  }
+}

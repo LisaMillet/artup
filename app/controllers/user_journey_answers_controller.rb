@@ -9,15 +9,26 @@ class UserJourneyAnswersController < ApplicationController
 
     authorize @user_journey_answer
     # binding.pry
-    if @question == @user_journey_piece.last_question
-      @user_journey_piece.revealed!
-      redirect_to user_journey_piece_path(@user_journey_piece), status: :see_other
 
-    else
-      @user_journey_piece = @user_journey.next_user_journey_piece if @user_journey_piece.next_question.nil?
+    @user_journey_piece.revealed! if @question == @user_journey_piece.last_question
 
-      redirect_to question_path(@user_journey_piece.next_question), status: :see_other
-    end
+    continue_btn_path = if @question == @user_journey_piece.last_question
+                          user_journey_piece_path(@user_journey_piece)
+                        else
+                          @user_journey_piece = @user_journey.next_user_journey_piece if @user_journey_piece.next_question.nil?
+                          question_path(@user_journey_piece.next_question)
+                        end
+
+    render json: { html: render_to_string(partial: 'questions/answered_show', locals: { question: @question, continue_btn_path: continue_btn_path, clicked_answer: @answer }, formats: :html) }
+    # if @question == @user_journey_piece.last_question
+    #   @user_journey_piece.revealed!
+    #   redirect_to user_journey_piece_path(@user_journey_piece), status: :see_other
+
+    # else
+    #   @user_journey_piece = @user_journey.next_user_journey_piece if @user_journey_piece.next_question.nil?
+
+    #   redirect_to question_path(@user_journey_piece.next_question), status: :see_other
+    # end
   end
 
 end

@@ -30,32 +30,35 @@
     </div>
   </div>
 
-  <% @user_journey.pieces.order(:id).each do |piece| %>
-    <div class="card-piece">
-        <div class="card-piece-infos <%= "done" if @user_journey.revealed?(piece) %>" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path piece.photo.key, height: 200, crop: :fill %>)">
-          <div>
-            <h2> <%= piece.name %></h2>
-            <p> <%= piece.artist %></p>
+  <div class="swiper" data-controller='swiper'>
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+
+      <% @user_journey.pieces.order(:id).each do |piece| %>
+        <div class="swiper-slide">
+          <div class="card-piece">
+            <div class="card-piece-infos <%= "done" if @user_journey.revealed?(piece) %>" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path piece.photo.key, height: 200, crop: :fill %>)">
+              <div>
+                <h2> <%= piece.name %></h2>
+                <p> <%= piece.artist %></p>
+              </div>
+            </div>
           </div>
         </div>
+      <% end %>
     </div>
-  <% end %>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
 
-   <swiper-container class="mySwiper" pagination="true" effect="coverflow" grab-cursor="true" centered-slides="true"
-    slides-per-view="auto" coverflow-effect-rotate="50" coverflow-effect-stretch="0" coverflow-effect-depth="100"
-    coverflow-effect-modifier="1" coverflow-effect-slide-shadows="true">
-      <% @user_journey.pieces.order(:id).each do |piece| %>
-        <swiper-slide>
-          <div class="card-piece-infos <%= "done" if @user_journey.revealed?(piece) %>" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path piece.photo.key, height: 200, crop: :fill %>)">
-          <div>
-            <h2> <%= piece.name %></h2>
-            <p> <%= piece.artist %></p>
-          </div>
-        </swiper-slide>
-        <% end %>
-  </swiper-container>
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
 
-  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
+    <!-- If we need scrollbar -->
+    <div class="swiper-scrollbar"></div>
+  </div>
+
 
 
 <% elsif current_user && policy(@user_journey).quit? == false %>

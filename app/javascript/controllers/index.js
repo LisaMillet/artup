@@ -9,3 +9,6 @@ application.register("hello", HelloController)
 
 import ScannerController from "./scanner_controller"
 application.register("scanner", ScannerController)
+
+import SwiperController from "./swiper_controller"
+application.register("swiper", SwiperController)

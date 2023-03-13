@@ -5,10 +5,9 @@
   <p class='container w-100'><%= piece.materials_techniques %></p>
   <p class='container w-100'><%= piece.creation_year %></p>
   <p class='container w-100'><%= piece.description %></p>
-  <p class='container w-100'><%= piece.media %></p>
+  <p class='media'><%= piece.media.html_safe %></p>
 
 
-  <%# <p><iframe width="560" height="315" src="https://www.youtube.com/embed/V9vw2TGc06Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></p> %>
   <div class='d-flex justify-content-center my-2'>
     <%= link_to "Continuer ma visite", user_journey_path(user_journey), class: 'btn btn-filled' %>
   </div>

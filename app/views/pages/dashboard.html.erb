@@ -1,0 +1,5 @@
+<h1>Bienvenue <%= current_user.first_name %> !</h1>
+<h2>Vos parcours :</h2>
+<% @user_journeys.each do |user_journey| %>
+<%= link_to user_journey_path(user_journey) do %>
+<%= cl_image_tag journey.photo.key %>

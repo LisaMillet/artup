@@ -5,9 +5,9 @@
   <p class='container w-100'><%= piece.materials_techniques %></p>
   <p class='container w-100'><%= piece.creation_year %></p>
   <p class='container w-100'><%= piece.description %></p>
-  <%# <p>piece.media</p> %>
+  <p class='media'><%= piece.media.html_safe %></p>
+
+
   <div class='d-flex justify-content-center my-2'>
     <%= link_to "Continuer ma visite", user_journey_path(user_journey), class: 'btn btn-filled' %>
   </div>
-
-

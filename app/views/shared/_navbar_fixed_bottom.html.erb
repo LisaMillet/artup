@@ -2,9 +2,16 @@
 <div class="icone navbar-background">
   <div class="d-flex justify-content-center" id="nav-btn">
       <%= link_to root_path, class:'text-center' do %><i class="fa-solid fa-house"></i><% end %>
-      <%= link_to root_path, class:'text-center' do %><i class="fa-solid fa-right-from-bracket"></i><% end %>
+      <% if @user_journey.nil? || @user_journey.id.nil? %>
+        <div class="text-center">
+          <i class="fa-solid fa-right-from-bracket" style="opacity: 0.3;"></i>
+        </div>
+      <% else %>
+        <%= link_to quit_path(@user_journey), data:{turbo_method: :patch}, class:'text-center' do %><i class="fa-solid fa-right-from-bracket"></i><% end %>
+      <% end %>
       <%= link_to root_path, class:'text-center' do %><i class="fa-solid fa-location-dot"></i><% end %>
-      <%= link_to root_path, class:'text-center' do %><i class="fa-solid fa-user"></i><% end %>
+
+
+      <%= link_to dashboard_path(@current_user), class:'text-center' do %><i class="fa-solid fa-user"></i><% end %>
   </div>
 </div>
-

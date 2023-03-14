@@ -73,3 +73,32 @@
     backdrop-filter: blur(0px);
   }
 }
+
+.card-piece-banner {
+  overflow: hidden;
+  background: transparent;
+  width: 100%;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+
+.card-piece-banner-infos {
+  height: 200px;
+  margin-bottom: 20px;
+  background-size: cover;
+  background-position: center;
+
+  > div {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    color: $green-gray;
+  }
+}

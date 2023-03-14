@@ -18,5 +18,5 @@ Rails.application.routes.draw do
   # resources :pieces, only: :show
   patch 'user_journeys/:id/quit', to: 'user_journeys#quit', as: 'quit'
   get '/qrcode/:slug', to: 'scanner#qr_code', as: 'qr_code'
-  get 'dashboard', to: 'pages#dashboard', as: 'dashboard'
+  get '/dashboard/:id', to: 'pages#dashboard', as: 'dashboard'
 end

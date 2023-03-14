@@ -6,13 +6,20 @@
 <p class='container w-100'><%= @journey.description %></p>
 <div class='d-flex justify-content-center my-2'><%= link_to 'Commencer la visite',  journey_user_journeys_path(@journey), data: {turbo_method: :post}, class: 'btn btn-filled'%></div>
 
-  <div class="card-piece">
-    <% @journey.pieces.each do |piece| %>
-        <div class="card-piece-infos done" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path piece.photo.key, height: 200, crop: :fill %>)">
-          <div>
-            <h2> <%= piece.name %></h2>
-            <p> <%= piece.artist %></p>
+<div class="swiper" data-controller='swiper'>
+  <div class="swiper-wrapper">
+
+    <% @journey.pieces.order(:id).each do |piece| %>
+      <div class="swiper-slide">
+        <div class="card-piece">
+          <div class="card-piece-infos done" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path piece.photo.key %>)">
+            <div>
+              <h2> <%= piece.name %></h2>
+              <p> <%= piece.artist %></p>
+            </div>
           </div>
         </div>
+      </div>
     <% end %>
   </div>
+</div>

@@ -31,6 +31,15 @@
   overflow: hidden;
   background: transparent;
   height: 100%;
+  position: relative;
+  > a {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+    z-index: 10;
+  }
 }
 
 .card-piece-infos {

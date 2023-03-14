@@ -43,10 +43,10 @@
   overflow: hidden;
 
   &::-webkit-progress-value {
-    background-color: $dark-green;
+    background-color: $green;
   }
 
   &::-webkit-progress-bar {
-     background-color: $brown;
+     background-color: $dark-green;
   }
 }

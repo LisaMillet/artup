@@ -15,7 +15,7 @@ file = File.read(filepath, encoding: 'bom|utf-8')
 
 csv = CSV.parse(file, headers: :first_row, col_sep: ';')
 csv.each do |row|
-  piece = Piece.create!(name: row["name"], description: row["description"], materials_techniques: row["materials_techniques"], media: row["media"], creation_year: row["creation_year"], artist: row["artist"], status: row["status"], slug: row["slug"])
+  p piece = Piece.create!(name: row["name"], fun_fact_1: row["fun_fact_1"], fun_fact_2: row["fun_fact_2"], fun_fact_3: row["fun_fact_3"], fun_fact_4: row["fun_fact_4"], fun_fact_5: row["fun_fact_5"], materials_techniques: row["materials_techniques"], media: row["media"], creation_year: row["creation_year"], artist: row["artist"], status: row["status"], slug: row["slug"])
   # photo attachment
   if row["image"]
     file = URI.open(row["image"])
@@ -76,17 +76,17 @@ puts "Creating user"
 user = User.create!(first_name: 'Inès', last_name: 'Calment', email: "beyonce@artup.com", password: "mdpmdp")
 
 puts "Puting Pieces dans journeys"
-beyonce = Journey.find_by(name: "Parcours Beyonce & Jay Z")
+beyonce = Journey.find_by(name: "Beyonce & Jay Z")
 Piece.all.each do |p|
   JourneyPiece.create!(piece: p, journey: beyonce)
 end
 
-rennaissance = Journey.find_by(name: "Parcours œuvre de la Rennaissance")
+rennaissance = Journey.find_by(name: "Oeuvres de la Rennaissance")
 Piece.all.each do |p|
   JourneyPiece.create!(piece: p, journey: rennaissance)
 end
 
-chef_doeuvre = Journey.find_by(name: "Parcours les Chefs-d'œuvres du Louvre")
+chef_doeuvre = Journey.find_by(name: "Chefs-d'œuvres du Louvre")
 Piece.all.each do |p|
   JourneyPiece.create!(piece: p, journey: chef_doeuvre)
 end

@@ -8,4 +8,8 @@ class Piece < ApplicationRecord
   has_one_attached :prod_qr_code
   has_one_attached :dev_qr_code
 
+  def fun_facts
+    [fun_fact_1, fun_fact_2, fun_fact_3, fun_fact_4, fun_fact_5].compact
+  end
+
 end

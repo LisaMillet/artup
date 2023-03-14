@@ -5,6 +5,7 @@
   align-items: center;
   text-align: center;
   justify-content: space-between;
+  margin-top: 60px;
   margin-bottom: 30px;
 }
 
@@ -21,7 +22,7 @@
 }
 
 .score-bar-result{
-  color: #755e02;
+  color: $light-gray;
   font-weight: bold;
   margin-bottom: 0;
   span {
@@ -36,16 +37,16 @@ p.score-bar-legend {
   font-weight: bold;
   margin-bottom: 0;
   font-size: 11px;
-  color: #755e02;
+  color: $light-gray;
 }
 
 .card-score {
   width: 27%;
-  background: #bcb185;
+  background: $dark-green;
   padding: 10px;
   &:nth-of-type(2) {
     width: 40%;
-    background: #85773e;
+    background: $green;
     transform: scale(1.08);
     p {
 

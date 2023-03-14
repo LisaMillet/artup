@@ -3,7 +3,7 @@
   font-size: 25px;
   letter-spacing: 60px;
   text-decoration: none;
-  color: black;
+  color: $dark-green;
   bottom: 0;
 }
 
@@ -14,7 +14,7 @@
   padding: 4px;
   bottom: 0;
   position: fixed;
-
+  z-index: 1000000000000000000;
 }
 
 .navbar-nav {
@@ -26,6 +26,6 @@
 }
 
 #nav-btn a {
-  color: black;
+  color: $dark-green;
   text-decoration: none;
 }

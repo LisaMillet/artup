@@ -1,5 +1,5 @@
 import { Controller } from "@hotwired/stimulus"
-import Swiper, { Navigation, Pagination } from 'swiper';
+import Swiper, { EffectCoverflow } from 'swiper';
 
 
 export default class extends Controller {
@@ -15,19 +15,7 @@ export default class extends Controller {
         stretch: 0,
         depth: 100,
       },
-      modules: [Navigation, Pagination],
-
-        // If we need pagination
-      pagination: {
-        el: '.swiper-pagination',
-        type: 'bullets',
-      },
-
-      // Navigation arrows
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
+      modules: [EffectCoverflow]
     });
   }
 }

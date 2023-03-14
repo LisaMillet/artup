@@ -1,10 +1,8 @@
 
 <% if current_user && policy(@user_journey).quit? == true %>
   <div class='container w-100'>
-    <h1><%= @user_journey.journey.name %></h1>
 
   <div class=" navbar-score">
-
       <div class="card-score">
         <i class="d-none fa-solid fa-palette score-bar-title"></i>
         <p class='score-bar-result'><span><%=@user_journey.number_of_revealed%></span> / <%=@user_journey.number_of_pieces%></p>
@@ -22,7 +20,6 @@
         <p class='score-bar-result'><span><%=@user_journey.discount%></span> %</p>
         <p class='score-bar-legend'>réduction gagnée</p>
       </div>
-
   </div>
 
     <div class='d-flex justify-content-center'>
@@ -30,15 +27,58 @@
     </div>
   </div>
 
-  <div class="swiper" data-controller='swiper'>
+  <div class="swiper" data-controller='swiper' data-swiper-next-piece-id-value="<%= @user_journey.next_user_journey_piece.piece.id %>">
     <!-- Additional required wrapper -->
     <div class="swiper-wrapper">
       <!-- Slides -->
 
       <% @user_journey.pieces.order(:id).each do |piece| %>
+
+        <div class="swiper-slide" data-swiper-target="slide" data-piece-id="<%= piece.id %>">
+            <div class="card-piece">
+              <%= link_to '', @user_journey.user_journey_pieces.find_by(piece: piece) if @user_journey.revealed?(piece) %>
+              <div class="card-piece-infos <%= "done" if @user_journey.revealed?(piece) %>" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path piece.photo.key %>)">
+                <div>
+                  <h2> <%= piece.name %></h2>
+                  <p> <%= piece.artist %></p>
+                </div>
+              </div>
+            </div>
+          </div>
+      <% end %>
+    </div>
+  </div>
+
+
+
+<% elsif current_user && policy(@user_journey).quit? == false %>
+  <h1 class='container w-100'>Félicitations !</h1>
+  <div class=" navbar-score">
+    <div class="card-score">
+      <i class="d-none fa-solid fa-palette score-bar-title"></i>
+      <p class='score-bar-result'><span><%=@user_journey.number_of_revealed%></span> / <%=@user_journey.number_of_pieces%></p>
+      <p class='score-bar-legend'>oeuvres découvertes</p>
+    </div>
+
+    <div class="card-score">
+      <i class="d-none fa-solid fa-trophy score-bar-title"></i>
+      <p class='score-bar-result'><span><%=@user_journey.score%></span> / <%=@user_journey.total_score%></p>
+      <p class='score-bar-legend'>questions <br> validées</p>
+    </div>
+
+    <div class="card-score">
+      <i class="d-none fa-solid fa-coins score-bar-title"></i>
+      <p class='score-bar-result'><span><%=@user_journey.discount%></span> %</p>
+      <p class='score-bar-legend'>réduction gagnée</p>
+    </div>
+  </div>
+  <div class="swiper" data-controller='swiper'>
+    <div class="swiper-wrapper">
+      <% @user_journey.pieces.order(:id).each do |piece| %>
         <div class="swiper-slide">
           <div class="card-piece">
-            <div class="card-piece-infos <%= "done" if @user_journey.revealed?(piece) %>" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path piece.photo.key, height: 200, crop: :fill %>)">
+            <%= link_to '', @user_journey.user_journey_pieces.find_by(piece: piece) if @user_journey.revealed?(piece) %>
+            <div class="card-piece-infos <%= "done" if @user_journey.revealed?(piece) %>" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path piece.photo.key %>)">
               <div>
                 <h2> <%= piece.name %></h2>
                 <p> <%= piece.artist %></p>
@@ -48,29 +88,5 @@
         </div>
       <% end %>
     </div>
-    <!-- If we need pagination -->
-    <div class="swiper-pagination"></div>
-
-    <!-- If we need navigation buttons -->
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
-
-    <!-- If we need scrollbar -->
-    <div class="swiper-scrollbar"></div>
   </div>
-
-
-
-<% elsif current_user && policy(@user_journey).quit? == false %>
-    <h1 class='container w-100'>Voici le recap final de votre parcours</h1>
-    <% @user_journey.pieces.order(:id).each do |piece| %>
-      <div class="card-piece">
-          <div class="card-piece-infos <%= "done" if @user_journey.revealed?(piece) %>" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path piece.photo.key, height: 200, crop: :fill %>)">
-            <div>
-              <h2> <%= piece.name %></h2>
-              <p> <%= piece.artist %></p>
-            </div>
-          </div>
-        </div>
-    <% end %>
 <% end %>

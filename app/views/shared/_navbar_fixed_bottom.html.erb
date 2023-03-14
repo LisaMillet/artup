@@ -2,13 +2,18 @@
 <div class="icone navbar-background">
   <div class="d-flex justify-content-center" id="nav-btn">
       <%= link_to root_path, class:'text-center' do %><i class="fa-solid fa-house"></i><% end %>
-      <% if @user_journey.nil? || @user_journey.id.nil? %>
+      <% if current_user.nil? %>
         <div class="text-center">
-          <i class="fa-solid fa-right-from-bracket" style="opacity: 0.3;"></i>
+        <%= link_to new_user_session_path(), class:'text-center' do %><i class="fa-solid fa-user"></i><% end %>
         </div>
+      <% elsif @user_journey.nil? || @user_journey.id.nil? && %>
+        <%= link_to dashboard_path(current_user), class:'text-center' do %><i class="fa-solid fa-user"></i><% end %>
       <% else %>
         <%= link_to quit_path(@user_journey), data:{turbo_method: :patch}, class:'text-center' do %><i class="fa-solid fa-right-from-bracket"></i><% end %>
+        <%= link_to dashboard_path(current_user), class:'text-center' do %><i class="fa-solid fa-user"></i><% end %>
+        <%= link_to user_journey_path(@user_journey), class:'text-center' do %><i class="fa-solid fa-location-dot"></i><% end %>
       <% end %>
+      
     <% if @journey.nil? || @journey.id.nil? %>
         <%= link_to journey_path(Journey.first), class:'text-center' do %><i class="fa-solid fa-location-dot"></i><% end %>
       <% else %>

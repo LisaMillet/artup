@@ -30,23 +30,37 @@
 .card-piece {
   overflow: hidden;
   background: transparent;
+  height: 100%;
+  position: relative;
+  > a {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+    z-index: 10;
+  }
 }
 
 .card-piece-infos {
-  height: 200px;
-  margin-bottom: 20px;
+  height: 100%;
+  // height: 200px;
   background-size: cover;
   background-position: top;
 
   > div {
     backdrop-filter: blur(8px);
     height: 100%;
-    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    gap: 4;
     color: $green-gray;
+    > * {
+      text-align: center;
+      margin: 0;
+    }
     > p {
       font-family: $body-font;
       font-weight: 600;
@@ -57,5 +71,34 @@
 .done {
   > div {
     backdrop-filter: blur(0px);
+  }
+}
+
+.card-piece-banner {
+  overflow: hidden;
+  background: transparent;
+  width: 100%;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+
+.card-piece-banner-infos {
+  height: 200px;
+  margin-bottom: 20px;
+  background-size: cover;
+  background-position: center;
+
+  > div {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    color: $green-gray;
   }
 }

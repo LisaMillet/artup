@@ -1,0 +1,25 @@
+#user_journeys_pieces-show{
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: $dark-green;
+  }
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: $dark-green;
+  }
+  p {
+    text-align: justify;
+    margin-bottom: 3px;
+    color: $dark-green;
+    font-family: $body-font;
+  }
+}
+
+.fun-facts::marker {
+  display: list-item;
+  content: "#" counter(li) " ";
+  color: $dark-green;
+  font-weight: bold;
+}

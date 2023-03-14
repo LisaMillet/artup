@@ -1,17 +1,19 @@
 
   <%= cl_image_tag piece.photo.key, height: 300, width: 400, crop: :fill %>
-  <h1 class='container w-100 text-center'><%= piece.name %></h1>
-  <h2 class='container w-100 text-center'><%= piece.artist %></h2>
-  <p class='container w-100 text-center'><%= piece.creation_year %></p>
-  <p class='container w-100'><%= piece.materials_techniques %></p>
-  <p class='container w-100'><%= piece.description %></p>
-  <p class='media'><%= piece.media.html_safe %></p>
+  <div class='container w-100'>
+    <h1 class='container w-100 text-center'><%= piece.name %></h1>
+    <h2 class='container w-100 text-center'><%= piece.artist %></h2>
+    <p class='container w-100 text-center'><%= piece.creation_year %></p>
+    <p class='container w-100'><%= piece.materials_techniques %></p>
+  </div>
 
-  <p>Le saviez-vous ?</p>
+  <div class='container w-100'>
+    <p>Le saviez-vous ?</p>
 
-  <% piece.fun_facts.each do |fun_fact| %>
-    <ul><li><%= fun_fact %></li></ul>
-  <% end %>
+    <% piece.fun_facts.each do |fun_fact| %>
+      <ul><li class='fun-facts'><%= fun_fact %></li></ul>
+    <% end %>
+  </div>
   <p class='media'><%= piece.media.html_safe %></p>
 
   <div class='d-flex justify-content-center my-2'>

@@ -16,7 +16,6 @@ class UserJourneyPiece < ApplicationRecord
   def next_question
     questions.find do |question|
       !answered_questions.include?(question)
-      # !question.in? answered_questions
     end
   end
 

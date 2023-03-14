@@ -13,7 +13,12 @@
         <%= link_to dashboard_path(current_user), class:'text-center' do %><i class="fa-solid fa-user"></i><% end %>
         <%= link_to user_journey_path(@user_journey), class:'text-center' do %><i class="fa-solid fa-location-dot"></i><% end %>
       <% end %>
-
-
+      
+    <% if @journey.nil? || @journey.id.nil? %>
+        <%= link_to journey_path(Journey.first), class:'text-center' do %><i class="fa-solid fa-location-dot"></i><% end %>
+      <% else %>
+        <%= link_to journey_path(@journey), class:'text-center' do %><i class="fa-solid fa-location-dot"></i><% end %>
+      <% end %>
+      <%= link_to dashboard_path(@current_user), class:'text-center' do %><i class="fa-solid fa-user"></i><% end %>
   </div>
 </div>

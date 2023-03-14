@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <%= link_to root_path, class: "navbar-brand" do %>
-    <h1>Artup</h1>
+    <%= image_tag "Artup.png", height: 50 %>
   <% end %>
   <% if controller_name == "questions" || controller_name == "user_journey_pieces" || controller_name == "user_journeys" %>
     <p><%= @user_journey.journey.name %></p>

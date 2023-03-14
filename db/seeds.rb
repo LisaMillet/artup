@@ -73,7 +73,7 @@ csv.each do |row|
   end
 end
 puts "Creating user"
-user = User.create!(first_name: 'Inès', last_name: 'Calment', email: "beyonce@artup.com", password: "mdpmdp")
+user = User.create!(first_name: 'Lisa', last_name: 'Calment', email: "beyonce@artup.com", password: "mdpmdp")
 
 puts "Puting Pieces dans journeys"
 beyonce = Journey.find_by(name: "Beyonce & Jay Z")

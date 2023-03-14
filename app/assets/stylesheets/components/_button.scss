@@ -5,12 +5,16 @@
   padding: 8px 24px;
   border-radius: $border-radius;
   font-weight: 300;
+  opacity: 1;
   transition: opacity 0.3s ease;
+  margin-bottom: 1rem;
 }
 
 .btn-empty:hover {
-  background-color: $dark-green;
-  color: $green-gray;
+  opacity: 0.5;
+  border: 1px solid $dark-green;
+  border-radius: $border-radius;
+  color: $dark-green;
 }
 
 
@@ -21,13 +25,14 @@
   padding: 8px 24px;
   border-radius: $border-radius;
   font-weight: 300;
+  opacity: 1;
   transition: opacity 0.3s ease;
 }
 
 .btn-filled:hover {
-  border: 1px solid $dark-green;
-  background-color: $green-gray;
-  color: $dark-green;
+  opacity: 0.5;
+  background-color: $dark-green;
+  color: $green-gray;
 }
 
 .btn-empty-white {

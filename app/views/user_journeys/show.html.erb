@@ -30,13 +30,13 @@
     </div>
   </div>
 
-  <div class="swiper" data-controller='swiper'>
+  <div class="swiper" data-controller='swiper' data-swiper-next-piece-id-value="<%= @user_journey.next_user_journey_piece.piece.id %>">
     <!-- Additional required wrapper -->
     <div class="swiper-wrapper">
       <!-- Slides -->
 
       <% @user_journey.pieces.order(:id).each do |piece| %>
-        <div class="swiper-slide">
+        <div class="swiper-slide" data-swiper-target="slide" data-piece-id="<%= piece.id %>">
           <div class="card-piece">
             <div class="card-piece-infos <%= "done" if @user_journey.revealed?(piece) %>" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path piece.photo.key %>)">
               <div>

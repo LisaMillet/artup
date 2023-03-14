@@ -3,7 +3,7 @@
     <%= image_tag "Artup.png" %>
   <% end %>
   <% if controller_name == "questions" || controller_name == "user_journey_pieces" || controller_name == "user_journeys" %>
-    <p><%= @user_journey.journey.name %></p>
+    <p><i class="fa-solid fa-signs-post"></i><%= @user_journey.journey.name %></p>
   <% end %>
 
   <% if controller_name == "questions" || controller_name == "user_journey_pieces" || controller_name == "user_journeys" %>

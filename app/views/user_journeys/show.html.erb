@@ -38,7 +38,7 @@
       <% @user_journey.pieces.order(:id).each do |piece| %>
         <div class="swiper-slide">
           <div class="card-piece">
-            <div class="card-piece-infos <%= "done" if @user_journey.revealed?(piece) %>" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path piece.photo.key, height: 200, crop: :fill %>)">
+            <div class="card-piece-infos <%= "done" if @user_journey.revealed?(piece) %>" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path piece.photo.key %>)">
               <div>
                 <h2> <%= piece.name %></h2>
                 <p> <%= piece.artist %></p>
@@ -48,15 +48,7 @@
         </div>
       <% end %>
     </div>
-    <!-- If we need pagination -->
-    <div class="swiper-pagination"></div>
 
-    <!-- If we need navigation buttons -->
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
-
-    <!-- If we need scrollbar -->
-    <div class="swiper-scrollbar"></div>
   </div>
 
 

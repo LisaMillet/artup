@@ -23,7 +23,7 @@ class UserJourneysController < ApplicationController
     @user_journey = UserJourney.find(params[:id])
     authorize @user_journey
     @user_journey.status = false
-    @user_journey.save
+    @user_journey.user_journey_pieces.locked.each(&:waiting_for_answer!) if @user_journey.save
     redirect_to user_journey_path(@user_journey)
   end
 end

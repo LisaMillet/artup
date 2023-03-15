@@ -11,7 +11,7 @@ class UserJourney < ApplicationRecord
   after_create :create_user_journey_pieces
 
   def next_user_journey_piece
-    user_journey_pieces.joins(:piece).order(pieces: { id: :asc }).where(user_journey_pieces: { status: [:waiting_for_answer, :locked] }).first
+    user_journey_pieces.joins(:piece).order(pieces: :asc).where(user_journey_pieces: { status: [:waiting_for_answer, :locked] }).first
   end
 
   def score
@@ -19,7 +19,7 @@ class UserJourney < ApplicationRecord
   end
 
   def discount
-    ((((journey.discount / 100) * score) / total_score) * 100).to_i
+    (((( journey.discount.to_f / 100) * score) / total_score) * 100).ceil
   end
 
   def total_score

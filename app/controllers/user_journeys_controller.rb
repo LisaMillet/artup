@@ -2,6 +2,7 @@ class UserJourneysController < ApplicationController
   def show
     @user_journey = UserJourney.find(params[:id])
     authorize @user_journey
+    session[:current_user_journey_id] = @user_journey.id
   end
 
   def create

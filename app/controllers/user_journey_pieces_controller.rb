@@ -19,4 +19,5 @@ class UserJourneyPiecesController < ApplicationController
     @piece.waiting_for_answer!
     redirect_to question_path(@piece.questions.first)
   end
+
 end

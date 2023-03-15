@@ -3,7 +3,11 @@
     <%= image_tag "Artup.png" %>
   <% end %>
   <% if controller_name == "questions" || controller_name == "user_journey_pieces" || controller_name == "user_journeys" %>
-    <p><i class="fa-solid fa-signs-post"></i> <%= @user_journey.journey.name %></p>
+    <p><i class="fa-solid fa-shoe-prints"></i> <%= @user_journey.journey.name %></p>
+  <% end %>
+
+  <% if action_name == "home" %>
+    <p class="visitez-title"> Visitez le musée autrement </p>
   <% end %>
 
   <% if controller_name == "questions" || controller_name == "user_journey_pieces" || controller_name == "user_journeys" %>

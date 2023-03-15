@@ -74,22 +74,23 @@
   font-family: $body-font;
   border-radius: $border-radius;
   font-size: 20px;
-  padding: 0.1rem 0.5rem;
+  padding: 5px 10px 5px 10px;
   background-color: $green-gray;
   color: $dark-green;
-  border: 1px solid $dark-green;
+  // border: 1px solid $dark-green;
   margin-right: 0.6rem;
-  margin-bottom: 0.4rem;
+  margin-bottom: 17px;
+  text-shadow: 1px;
 }
 
 .answers_css:checked + label {
   background-color: $dark-green;
   color: $green-gray;
-  border: 1px solid $dark-green;
+  // border: 1px solid $dark-green;
   font-family: $body-font;
   margin-right: 0.6rem;
-  margin-bottom: 0.4rem;
-  padding: 0.1rem 0.5rem;
+  margin-bottom: 17px;
+  padding: 5px 10px 5px 10px;
 }
 
 .answer-div {
@@ -98,21 +99,26 @@
   font-family: $body-font;
   border-radius: $border-radius;
   font-size: 20px;
-  padding: 0.1rem 0.5rem;
+  padding: 5px 10px 5px 10px;
   background-color: $green-gray;
   color: $dark-green;
-  border: 1px solid $dark-green;
+  // border: 1px solid $dark-green;
   margin-right: 0.6rem;
-  margin-bottom: 0.4rem;
+  margin-bottom: 17px;
+  box-shadow: 2px 2px 2px 2px #c9c5c5;
   &.wrong-answer {
     // background-color: $red;
     border-color: $red;
     color: $red;
+    box-shadow: 2px 2px 2px 2px #c9c5c5;
+    background-color: #ffd0d0;
   }
   &.right-answer {
     background-color: $green;
     border-color: $green;
-    color: white;
+    color: rgb(38, 141, 86);
+    background-color: rgb(173, 229, 199);
+    box-shadow: 2px 2px 2px 2px #c9c5c5;
   }
 }
 
@@ -131,9 +137,10 @@
     color: $dark-green;
     font-family: $body-font;
     font-weight: 600;
-    padding: 0.1rem 0.5rem;
+    padding: 5px 10px 5px 10px;
     margin-right: 0.6rem;
-    margin-bottom: 0.4rem;
+    margin-bottom: 17px;
+    box-shadow: 2px 2px 2px 2px #c9c5c5;
   }
 }
 

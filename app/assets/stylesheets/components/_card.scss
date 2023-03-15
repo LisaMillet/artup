@@ -40,6 +40,15 @@
     top: 0;
     z-index: 10;
   }
+  .card-piece-location {
+    font-size: 0.8rem;
+    position: absolute;
+    bottom: 5px;
+    right: 0;
+    left: 0;
+    color: $green-gray;
+    text-align: center;
+  }
 }
 
 .card-piece-infos {
@@ -47,6 +56,7 @@
   // height: 200px;
   background-size: cover;
   background-position: top;
+  font-size: 15px;
 
   > div {
     backdrop-filter: blur(8px);

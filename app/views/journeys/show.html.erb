@@ -19,13 +19,16 @@
 
     <% @journey.pieces.order(:id).each do |piece| %>
       <div class="swiper-slide">
-        <div class="card-piece">
-          <div class="card-piece-infos done" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path piece.photo.key %>)">
+        <div class="card-piece"  style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path piece.photo.key %>)">
+          <div class="card-piece-infos done">
             <div>
-              <h2> <%= piece.name %></h2>
-              <p> <%= piece.artist %></p>
+              <h2><%= piece.name %></h2>
+              <div><%= piece.artist %></div>
             </div>
           </div>
+          <% if piece.location %>
+            <div class="card-piece-location"><i class="fa-regular fa-compass"></i> <%= piece.location %></div>
+          <% end %>
         </div>
       </div>
     <% end %>

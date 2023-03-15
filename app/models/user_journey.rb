@@ -11,7 +11,7 @@ class UserJourney < ApplicationRecord
   after_create :create_user_journey_pieces
 
   def next_user_journey_piece
-    user_journey_pieces.where(status: [:waiting_for_answer, :locked]).first
+    user_journey_pieces.joins(:piece).order(pieces: { id: :asc }).where(user_journey_pieces: { status: [:waiting_for_answer, :locked] }).first
   end
 
   def score

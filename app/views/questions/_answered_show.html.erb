@@ -1,5 +1,5 @@
-<div class="">
-  <legend class="col-form-label pt-0"><%= question.content %></legend>
+<div class="answered-questions">
+  <div class="question mb-4"><%= @question.content %></div>
   <% question.answers.each do |answer| %>
     <div class="answer-div <%= "right-answer" if answer.right_answer %> <%= "wrong-answer" if answer == clicked_answer %>"><%= answer.content %></div>
   <% end %>

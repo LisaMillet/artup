@@ -1,13 +1,13 @@
 ﻿piece_name;question_content;answer_1_content;answer_2_content;answer_3_content;answer_4_content;correct_answer
-La Vierge au coussin vert;Qui est représentée sur le tableau ?;1. L'épouse de Solario et son fils;2. La Vierge Marie tenant l'enfant Jésus sur ses genoux;3. Une femme et un enfant inconnu;4. La Fornarina donnant le sein à son enfant;2. La Vierge Marie tenant l'enfant Jésus sur ses genoux
-La Vierge au coussin vert;Quel autre célèbre peintre a été le maître de Solari ?;1. Giovanni Bellini;2. Raphaël;3. Leonard de Vinci;4. Michel Ange;3. Leonard de Vinci
-Pietà;Qui a réalisé la première Pietà (qui était une sculpture), avant d'inspirer de nombreux artistes ?;1. Rosso Fiorentino;2. Michel-Ange;3. Titien;4. Maître de Rohan;1. Rosso Fiorentino
-Pietà;Fiorentino a été chargé de décorer un célèbre château français par François 1er. Lequel ?;1. Château de Fontainebleau;2. Château de Chambord;3. Château de Blois;4. Château de Saint-Germain en Laye;1. Château de Fontainebleau
-La Joconde;Pourquoi est-ce que Monna Lisa sourit ?;1. Elle adore poser;2. Des bouffons la font rire;3. Elle trouve Leonardo da Vinci amusant;4. C'est un choix artistique;2. Des bouffons la font rire
-La Joconde;Pourquoi est-ce que Monna Lisa est jaune, et le ciel vert ?;1. Leonard de Vinci voulait s'amuser;2. Quelqu'un a repeint dessus;3. Il faisait particulièrement moche ce jour-là;4. Le vernis a vieilli et changé les couleurs;4. Le vernis a vieilli et changé les couleurs
-Les Noces de Cana;Quel petit animal se balade sur la table ?;1. Un singe;2. Un petit chien;3.Un oiseau sauvage;4. Un petit veau;2. Un petit chien
-Les Noces de Cana;Où était initialement exposé ce tableau ?;1. Au Vatican;2. Dans un temple à Athène;3. Dans le réfectoire d’un couvent de Venise;4. Dans une chappelle sur une ile au large de Naple;3. Dans le réfectoire d’un couvent de Venise
-La Victoire de Samothrace;Quel artiste a sculpté cette œuvre ?;1. Camille Claudel;2. Rodin;3. Phidias;3. Son sculpteur est inconnu;3. Son sculpteur est inconnu
-La Victoire de Samothrace;En quelle année cette œuvre a-t-elle été découverte ?;1. 1863;2. On ne sait pas précisément;3. 2010;4. 1517;1. 1863
-Le Louvre;Quel était l'usage initial du Palais du Louvre ?;1. Une prison pour les criminels les plus dangereux de Paris;2. Une forteresse afin de protéger Paris des attaques ennemies;3. Le palais de Louis XIV;4. Un hôpital pour les malades mentaux;2. Une forteresse afin de protéger Paris des attaques ennemies
-Le Louvre;En quelle année a été inaugurée la célèbre pyramide de verre du Louvre ?;1. 1889;2. 1979;3. 1999;4. 1989;4. 1989
+La Vierge au coussin vert;Qui est représentée sur le tableau ?;L'épouse de Solario et son fils;La Vierge Marie tenant l'enfant Jésus sur ses genoux;Une femme et un enfant inconnu;La Fornarina donnant le sein à son enfant;La Vierge Marie tenant l'enfant Jésus sur ses genoux
+La Vierge au coussin vert;Quel autre célèbre peintre a été le maître de Solari ?;Giovanni Bellini;Raphaël;Leonard de Vinci;Michel Ange;Leonard de Vinci
+Pietà;Qui a réalisé la première Pietà (qui était une sculpture), avant d'inspirer de nombreux artistes ?;Rosso Fiorentino;Michel-Ange;Titien;Maître de Rohan;Michel-Ange
+Pietà;Fiorentino a été chargé de décorer un célèbre château français par François 1er. Lequel ?;Château de Fontainebleau;Château de Chambord;Château de Blois;Château de Saint-Germain en Laye;Château de Fontainebleau
+La Joconde;Pourquoi est-ce que Monna Lisa sourit ?;Elle adore poser;Des bouffons la font rire;Elle trouve Leonardo da Vinci amusant;C'est un choix artistique;Des bouffons la font rire
+La Joconde;Pourquoi est-ce que Monna Lisa est jaune, et le ciel vert ?;Leonard de Vinci voulait s'amuser;Quelqu'un a repeint dessus;Il faisait particulièrement moche ce jour-là;Le vernis a vieilli et changé les couleurs;Le vernis a vieilli et changé les couleurs
+Les Noces de Cana;Quel petit animal se balade sur la table ?;Un singe;Un petit chien;Un oiseau sauvage;Un petit veau;Un petit chien
+Les Noces de Cana;Où était initialement exposé ce tableau ?;Au Vatican;Dans un temple à Athène;Dans le réfectoire d’un couvent de Venise;Dans une chappelle sur une ile au large de Naple;Dans le réfectoire d’un couvent de Venise
+La Victoire de Samothrace;Quel artiste a sculpté cette œuvre ?;Camille Claudel;Rodin;Phidias;Son sculpteur est inconnu;Son sculpteur est inconnu
+La Victoire de Samothrace;En quelle année cette œuvre a-t-elle été découverte ?;1863;On ne sait pas précisément;2010;1517;1863
+Le Louvre;Quel était l'usage initial du Palais du Louvre ?;Une prison pour les criminels les plus dangereux de Paris;Une forteresse afin de protéger Paris des attaques ennemies;Le palais de Louis XIV;Un hôpital pour les malades mentaux;Une forteresse afin de protéger Paris des attaques ennemies
+Le Louvre;En quelle année a été inaugurée la célèbre pyramide de verre du Louvre ?;1889;1979;1999;1989;1989

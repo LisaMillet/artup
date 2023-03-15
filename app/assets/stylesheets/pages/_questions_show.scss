@@ -37,6 +37,8 @@
     // }
     img {
       width: 90vw;
+      height: 250px;
+      object-fit: cover;
       border-radius: $border-radius;
     }
     > div {

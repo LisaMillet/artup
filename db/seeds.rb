@@ -15,7 +15,7 @@ file = File.read(filepath, encoding: 'bom|utf-8')
 
 csv = CSV.parse(file, headers: :first_row, col_sep: ';')
 csv.each do |row|
-  p piece = Piece.create!(name: row["name"], fun_fact_1: row["fun_fact_1"], fun_fact_2: row["fun_fact_2"], fun_fact_3: row["fun_fact_3"], fun_fact_4: row["fun_fact_4"], fun_fact_5: row["fun_fact_5"], materials_techniques: row["materials_techniques"], media: row["media"], creation_year: row["creation_year"], artist: row["artist"], status: row["status"], slug: row["slug"])
+  p piece = Piece.create!(name: row["name"], fun_fact_1: row["fun_fact_1"], fun_fact_2: row["fun_fact_2"], fun_fact_3: row["fun_fact_3"], fun_fact_4: row["fun_fact_4"], fun_fact_5: row["fun_fact_5"], materials_techniques: row["materials_techniques"], media: row["media"], creation_year: row["creation_year"], artist: row["artist"], status: row["status"], slug: row["slug"], location: row["location"])
   # photo attachment
   if row["image"]
     file = URI.open(row["image"])

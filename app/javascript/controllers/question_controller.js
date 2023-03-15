@@ -1,10 +1,13 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  static targets = ["form"]
+  static targets = ["form", "answersContainer", "gif"]
+  static values = {
+    yesGifUrl: String,
+    noGifUrl: String,
+  }
 
   connect() {
-    console.log("Hello from our first Stimulus controller")
   }
 
   submit(event) {
@@ -19,7 +22,17 @@ export default class extends Controller {
     })
     .then(response => response.json())
     .then((data) => {
-      this.element.innerHTML = data.html
+      if (data.answer_is_right) {
+        this.answersContainerTarget.innerHTML = `<div class="gif-container" data-question-target="gif"><img src="${this.yesGifUrlValue}"><div><span>💖</span><div class="mx-2"> Oh yeaaaaaah!!! </div><span>💖</span></div></div>`
+      } else {
+        this.answersContainerTarget.innerHTML = `<div class="gif-container" data-question-target="gif"><img src="${this.noGifUrlValue}"><div><span>⛔️</span><div class="mx-2"> No No No No!!! </div><span>⛔️</span></div></div>`
+      }
+      setTimeout(() => {
+        this.gifTarget.classList.add('appear');
+      }, 5)
+      setTimeout(() => {
+        this.element.innerHTML = data.html
+      }, 2000)
     })
   }
 }

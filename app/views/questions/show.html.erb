@@ -6,10 +6,13 @@
         </div>
   </div>
 
-<div class="container w-100 question-form" data-controller="question">
+<div class="container w-100 question-form" data-controller="question" data-question-yes-gif-url-value="<%= image_path "beyonceyes3.gif" %>" data-question-no-gif-url-value="<%= image_path "beyonceno3.gif" %>">
 
   <%= simple_form_for [@user_journey_piece, @user_journey_answer], html: { data: { question_target: 'form' } } do |f| %>
-    <%= f.input :answer_id, collection: @question.answers.pluck(:content, :id), as: :radio_buttons, label: @question.content, input_html: { class: 'answers_css', data: { action: 'change->question#submit'} }, item_wrapper_class: 'form_wrapper' %>
+    <div class="question mb-4"><%= @question.content %></div>
+    <div data-question-target="answersContainer">
+      <%= f.input :answer_id, collection: @question.answers.pluck(:content, :id), as: :radio_buttons, input_html: { class: 'answers_css', data: { action: 'change->question#submit'} }, item_wrapper_class: 'form_wrapper' %>
+    </div>
   <% end %>
 
 </div>

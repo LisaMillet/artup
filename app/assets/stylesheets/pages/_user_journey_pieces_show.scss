@@ -4,22 +4,53 @@
     margin-bottom: 20px;
     color: $dark-green;
   }
+
   h2 {
     text-align: center;
-    margin-bottom: 20px;
     color: $dark-green;
   }
+
   p {
     text-align: justify;
-    margin-bottom: 3px;
+    margin: 0px;
     color: $dark-green;
     font-family: $body-font;
   }
-}
 
-.fun-facts::marker {
-  display: list-item;
-  content: "#" counter(li) " ";
+.results-question h2 {
+    font-size: 24px;
+    color: $dark-green;
+    margin-bottom: 3px;
+  }
+
+.results-question h3 {
+    font-size: 24px;
+    color: $dark-green;
+    margin: 0px;
+  }
+
+.results-question p {
+    text-align: justify;
+    margin: 0px;
+    color: $dark-green;
+    font-family: $body-font;
+  }
+
+.fun-facts h2 {
+  font-size: 24px;
   color: $dark-green;
-  font-weight: bold;
+  margin-bottom: 3px;
+  }
+
+.fun-facts li {
+    counter-increment: li;
+    display: list-item;
+  }
+
+.fun-facts li::marker {
+    display: list-item;
+    content: "#" counter(li) " ";
+    color: $dark-green;
+    font-weight: bold;
+  }
 }

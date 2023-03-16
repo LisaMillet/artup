@@ -6,7 +6,7 @@
     <p class="visitez-title"><%= @user_journey.journey.name %> <i class="fa-solid fa-shoe-prints"></i></p>
   <% end %>
 
-  <% if action_name == "home" %>
+  <% if action_name == "home" || controller_name == "journeys" %>
     <p class="visitez-title"> Visitez le musée autrement </p>
   <% end %>
 

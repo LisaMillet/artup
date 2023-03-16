@@ -49,4 +49,5 @@ class UserJourney < ApplicationRecord
       UserJourneyPiece.create(piece: piece, user_journey: self, status: piece.status)
     end
   end
+
 end

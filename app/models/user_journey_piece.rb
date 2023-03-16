@@ -22,4 +22,8 @@ class UserJourneyPiece < ApplicationRecord
   def last_question
     questions.last
   end
+
+  def last?
+    user_journey.user_journey_pieces.last == self
+  end
 end

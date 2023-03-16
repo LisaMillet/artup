@@ -1,3 +1,12 @@
+.navbar {
+  flex-wrap: nowrap;
+  p {
+    text-align: right !important;
+    font-weight: bolder !important;
+    padding-right: 10px !important;
+  }
+}
+
 .navbar-lewagon {
   background: $green-gray;
   justify-content: space-between;

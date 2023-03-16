@@ -1,9 +1,17 @@
+#user_journey_pieces-show {
+  iframe {
+    // height: 400px;
+  }
+}
+
 .pieces-details {
   h1 {
-    font-size: $large-font;
+    font-size: 40px;
     text-align: center;
-    margin-bottom: 1rem;
+    // margin-bottom: 1rem;
     color: $dark-green;
+    margin-top: 16px;
+    margin-bottom: 3px;
   }
 
   > h2 {
@@ -12,6 +20,9 @@
     color: $dark-green;
     font-family: $body-font;
     font-weight: 500;
+    margin-bottom: 1px;
+    opacity: 0.7;
+    font-style: italic;
   }
 
   > p {
@@ -20,10 +31,11 @@
     color: $dark-green;
     font-family: $body-font;
     font-weight: 500;
+    font-size: 1.2rem;
   }
 }
 
-  .results-question{
+  .results-question, .fun-fact {
     h2 {
       text-align: start;
       font-size: 28px;
@@ -31,6 +43,10 @@
       margin-bottom: 1rem;
       margin-top: 1rem;
       font-family: $headers-font;
+      background: #0a4037;
+      color: white;
+      padding: 6px;
+      text-align: center;
     }
 
     h3 {
@@ -47,30 +63,48 @@
       font-family: $body-font;
       font-size: $small-font;
       font-weight: 500;
+      opacity: 0.8;
+      font-style: italic;
+      padding-left: 0.4rem;
     }
   }
 
   .fun-fact {
-    h2 {
-      text-align: start;
-      font-size: 28px;
-      color: $dark-green;
-      margin-bottom: 1rem;
-      margin-top: 2rem;
-    }
+    // h2 {
+    //   text-align: start;
+    //   font-size: 28px;
+    //   color: $dark-green;
+    //   margin-bottom: 1rem;
+    //   margin-top: 2rem;
+    // }
 
+    p {
+      font-style: normal;
+      margin-bottom: 1rem;
+      font-size: 22px;
+      font-weight: 600;
+      line-height: 1.2;
+      opacity: 1;
+      padding-left: 0;
+    }
     li {
       counter-increment: li;
       display: list-item;
       font-size: $small-font;
       font-weight: 500;
+      margin-left: 8px;
     }
 
     li::marker {
     display: list-item;
-    content: "# " counter(li);
+    content: "#" counter(li);
     color: $dark-green;
     font-weight: bold;
     font-size: $small-font;
     }
   }
+.piece-img-show-with-media {
+  height: 250px;
+  width: 100vw;
+  object-fit: cover;
+}

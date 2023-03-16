@@ -44,6 +44,9 @@
                   <% end %>
                   <h2> <%= piece.name %></h2>
                   <p> <%= piece.artist %></p>
+                    <% if piece.location  %>
+                      <div class="card-piece-location"><i class="fa-regular fa-compass"></i> <%= piece.location %></div>
+                    <% end %>
                 </div>
               </div>
             </div>
@@ -51,7 +54,6 @@
       <% end %>
     </div>
   </div>
-
 
 
 <% elsif current_user && policy(@user_journey).quit? == false %>
@@ -88,6 +90,9 @@
                 <% end %>
                 <h2> <%= piece.name %></h2>
                 <p> <%= piece.artist %></p>
+                <% if piece.location  %>
+                <div class="card-piece-location"><i class="fa-regular fa-compass"></i> <%= piece.location %></div>
+                <% end %>
               </div>
             </div>
           </div>

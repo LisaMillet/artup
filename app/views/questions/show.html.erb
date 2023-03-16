@@ -1,4 +1,4 @@
-<div class="card-piece-banner">
+ <div class="card-piece-banner">
         <div class="card-piece-banner-infos done" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path @question.piece.photo.key, height: 200, crop: :fill %>)">
           <div>
             <h2> <%= @question.piece.name %></h2>
@@ -11,7 +11,11 @@
   <%= simple_form_for [@user_journey_piece, @user_journey_answer], html: { data: { question_target: 'form' } } do |f| %>
     <div class="question mb-4"><%= @question.content %></div>
     <div data-question-target="answersContainer">
-      <%= f.input :answer_id, collection: @question.answers.pluck(:content, :id), as: :radio_buttons, input_html: { class: 'answers_css', data: { action: 'change->question#submit'} }, item_wrapper_class: 'form_wrapper' %>
+
+      <%= f.input :answer_id, collection: @question.answers.pluck(:content, :id),
+                  as: :radio_buttons, input_html: { class: 'answers_css', data: { action: 'change->question#submit'} },
+                  item_wrapper_class: 'form_wrapper', label_method: lambda { |item| render "questions/answer_label", item: item, num: @question.answers.pluck(:content, :id).index(item)  } %>
+
     </div>
   <% end %>
 

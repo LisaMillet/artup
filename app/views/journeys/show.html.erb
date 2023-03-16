@@ -11,6 +11,7 @@
   </div>
 <p class='container w-100'><%= @journey.total_score %> questions pour devenir un expert du parcours <strong><%= @journey.name %></strong></p>
 <p class='container w-100'><%= @journey.description %></p>
+<p class='container w-100'> Chaque réponse cumulera des pourcentages de réduction à utiliser dans la boutique !</p>
 
 <div class='d-flex justify-content-center my-2'><%= link_to 'Commencer la visite',  journey_user_journeys_path(@journey), data: {turbo_method: :post}, class: 'btn btn-filled'%></div>
 

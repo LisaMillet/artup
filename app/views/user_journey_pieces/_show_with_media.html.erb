@@ -1,29 +1,32 @@
 
-  <%= cl_image_tag piece.photo.key, height: 300, width: 400, crop: :fill %>
-  <div class='container w-100'>
+<%= cl_image_tag piece.photo.key, height: 300, width: 400, crop: :fill %>
+<div class='container w-100'>
     <h1 class='container w-100 text-center'><%= piece.name %></h1>
     <h2 class='container w-100 text-center'><%= piece.artist %></h2>
     <p class='container w-100 text-center'><%= piece.creation_year %></p>
     <p class='container w-100 text-center'><%= piece.materials_techniques %></p>
-  </div>
 
-  <div class='container w-100'>
-    <p><i class="fa-regular fa-lightbulb"></i> <strong>Réponses aux questions : </p></strong>
+  <div class='results-question'>
+    <h2><i class="fa-regular fa-lightbulb"></i> <strong>Réponses aux questions : </h2></strong>
     <% piece.questions.each do |question| %>
-      <strong><p><%= question.content %></p></strong>
+      <strong><h3><%= question.content %></h3></strong>
       <p><%= question.right_answer_content %></p>
     <% end %>
+  </div>
 
-    <p><i class="fa-regular fa-lightbulb"></i> <strong>Le saviez-vous ?</strong></p>
-
-    <% piece.fun_facts.each do |fun_fact| %>
-      <ul><li><%= fun_fact %></li></ul>
-    <% end %>
+  <div class='fun-fact'>
+    <h2><i class="fa-regular fa-lightbulb"></i> <strong>Le saviez-vous ?</strong></h2>
+    <ul>
+      <% piece.fun_facts.each do |fun_fact| %>
+        <li><%= fun_fact %></li>
+      <% end %>
+    </ul>
   </div>
 
   <p class='media'><%= piece.media.html_safe %></p>
 
   <div class='d-flex justify-content-center my-2'>
-
     <%= link_to "Continuer ma visite", user_journey_path(user_journey), class: 'btn btn-filled' %>
   </div>
+
+</div>

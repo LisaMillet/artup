@@ -1,5 +1,5 @@
 <% if @user_journey_piece.locked? %>
-  <div>
+  <div id="scrollable">
     <div class='picture-qr-code container w-100'>
       <p>Trouvez <strong><%= @user_journey_piece.piece.name %></strong> dans le musée et scannez le QR Code</p>
       <img class='' src="<%= cl_image_path @user_journey_piece.piece.photo.key%>" alt="<%=@user_journey_piece.piece.name %>">

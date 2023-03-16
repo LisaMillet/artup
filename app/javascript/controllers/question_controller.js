@@ -34,7 +34,7 @@ export default class extends Controller {
       }, 5)
       setTimeout(() => {
         this.element.innerHTML = data.html
-      }, 4612)
+      }, 2000)
     })
   }
 }

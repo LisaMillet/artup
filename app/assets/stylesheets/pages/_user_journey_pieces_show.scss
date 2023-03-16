@@ -68,7 +68,7 @@
 
     li::marker {
     display: list-item;
-    content: "# " counter(li) " ";
+    content: "# " counter(li);
     color: $dark-green;
     font-weight: bold;
     font-size: $small-font;

@@ -62,7 +62,7 @@
 
 .submit_button{
   font-family: $headers-font;
-  font-size: 20px;
+  font-size: $small-font;
 }
 
 .answers_css{
@@ -75,7 +75,7 @@
   width: 100%;
   font-family: $body-font;
   border-radius: $border-radius;
-  font-size: 20px;
+  font-size: $small-font;
   padding: 5px 10px 5px 10px;
   background-color: $green-gray;
   color: $dark-green;
@@ -100,7 +100,7 @@
   width: 100%;
   font-family: $body-font;
   border-radius: $border-radius;
-  font-size: 20px;
+  font-size: $small-font;
   padding: 5px 10px 5px 10px;
   background-color: $green-gray;
   color: $dark-green;

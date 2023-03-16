@@ -5,13 +5,16 @@
   text-decoration: none;
   color: $dark-green;
   bottom: 0;
+  img {
+    height: 2.5rem;
+  }
 }
 
 .navbar-background {
   background: $green-gray;
   width: 100%;
   text-align: justify;
-  padding: 4px;
+  padding: 8px;
   bottom: 0;
   position: fixed;
   z-index: 1000000000000000000;

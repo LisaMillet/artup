@@ -1,6 +1,6 @@
 
-<%= cl_image_tag piece.photo.key, height: 300, width: 390, crop: :fill %>
-<div class='container w-100'>
+<%= cl_image_tag piece.photo.key, height: 300, width: 500, crop: :fill, class: "piece-img-show-with-media" %>
+<div class=''>
   <div class = 'pieces-details'>
     <h1><%= piece.name %></h1>
     <h2><%= piece.artist %></h2>
@@ -9,20 +9,22 @@
   </div>
 
 <div class='results-question'>
-    <h2><i class="fa-regular fa-lightbulb"></i> <strong>Réponses aux questions : </h2></strong>
-    <% piece.questions.each do |question| %>
-      <strong><h3><%= question.content %></h3></strong>
-      <p><i class="fa-solid fa-arrow-right-long"></i> <%= question.right_answer_content %></p>
-    <% end %>
+    <h2><i class="fa-regular fa-lightbulb"></i> <strong>Réponses aux questions</h2></strong>
+    <div class="container">
+      <% piece.questions.each_with_index do |question, index| %>
+        <h3><%= index + 1 %>. <%= question.content %></h3>
+        <p class="d-flex align-items-start"><%= image_tag 'answer-arrow.svg' %><span><%= question.right_answer_content %></span></p>
+      <% end %>
+    </div>
   </div>
 
   <div class='fun-fact'>
     <h2><i class="fa-regular fa-lightbulb"></i> <strong>Le saviez-vous ?</strong></h2>
-    <ul>
-      <% piece.fun_facts.each do |fun_fact| %>
-        <li><%= fun_fact %></li>
+    <div class="container">
+      <% piece.fun_facts.each_with_index do |fun_fact, index| %>
+        <p class="d-flex align-items-baseline gap-3"><span class="">#<%= index + 1 %></span><%= fun_fact %></p>
       <% end %>
-    </ul>
+    </div>
   </div>
 </div>
 

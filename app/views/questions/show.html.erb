@@ -14,7 +14,7 @@
 
       <%= f.input :answer_id, collection: @question.answers.pluck(:content, :id),
                   as: :radio_buttons, input_html: { class: 'answers_css', data: { action: 'change->question#submit'} },
-                  item_wrapper_class: 'form_wrapper', label_method: lambda { |item| render "questions/answer_label", item: item, num: @question.answers.pluck(:content, :id).index(item)  } %>
+                  item_wrapper_class: 'form_wrapper' %>
 
     </div>
   <% end %>

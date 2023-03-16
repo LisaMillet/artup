@@ -1,14 +1,10 @@
 
 <div class="icone navbar-background">
   <div class="d-flex justify-content-center" id="nav-btn">
-      <%= link_to root_path, class:'text-center' do %>
-        <%= image_tag 'home.svg' %>
-      <% end %>
+      <%= link_to root_path, class:'text-center' do %><i class="fa-solid fa-house"></i><% end %>
       <% if current_user.nil? %>
         <div class="text-center">
-        <%= link_to new_user_session_path(), class:'text-center' do %>
-          <%= image_tag 'user-icon.png' %>
-        <% end %>
+        <%= link_to new_user_session_path(), class:'text-center' do %><i class="fa-solid fa-user"></i><% end %>
         </div>
       <% elsif @user_journey.nil? || @user_journey.id.nil? && %>
         <%= link_to dashboard_path(current_user), class:'text-center' do %><i class="fa-solid fa-user"></i><% end %>

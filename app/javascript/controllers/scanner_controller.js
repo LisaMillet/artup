@@ -13,8 +13,18 @@ export default class extends Controller {
 
   onScanSuccess(decodedText, decodedResult) {
     // handle the scanned code as you like, for example:
+
     console.log(`Code matched = ${decodedText}`, decodedResult);
     window.location = decodedText;
+    console.log(document.getElementById('html5-qrcode-button-camera-start'))
+    document.getElementById('html5-qrcode-button-camera-start').addEventListener('click', function() {
+
+    })
+    // console.log(document.getElementById('html5-qrcode-button-camera-stop'))
+    // document.getElementById('html5-qrcode-button-camera-stop').addEventListener('click', function() {
+    //   window.pageYOffset = "- 150px";
+    //   console.log('coucou')
+    // })
   }
 
   onScanFailure(error) {
@@ -22,5 +32,4 @@ export default class extends Controller {
     // for example:
     console.warn(`Code scan error = ${error}`);
   }
-
 }

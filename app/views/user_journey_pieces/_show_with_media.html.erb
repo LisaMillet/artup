@@ -1,5 +1,5 @@
 
-<%= cl_image_tag piece.photo.key, height: 300, width: 400, crop: :fill %>
+<%= cl_image_tag piece.photo.key, height: 300, width: 390, crop: :fill %>
 <div class='container w-100'>
   <div class = 'pieces-details'>
     <h1><%= piece.name %></h1>
@@ -8,7 +8,7 @@
     <p><%= piece.materials_techniques %></p>
   </div>
 
-  <div class='results-question'>
+<div class='results-question'>
     <h2><i class="fa-regular fa-lightbulb"></i> <strong>Réponses aux questions : </h2></strong>
     <% piece.questions.each do |question| %>
       <strong><h3><%= question.content %></h3></strong>

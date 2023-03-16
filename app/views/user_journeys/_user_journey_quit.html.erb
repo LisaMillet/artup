@@ -1,0 +1,43 @@
+<h1 class='container w-100'>Félicitations !</h1>
+  <div class=" navbar-score">
+    <div class="card-score">
+      <i class="d-none fa-solid fa-palette score-bar-title"></i>
+      <p class='score-bar-result'><span><%=@user_journey.number_of_revealed%></span> / <%=@user_journey.number_of_pieces%></p>
+      <p class='score-bar-legend'>oeuvres découvertes</p>
+    </div>
+
+    <div class="card-score">
+      <i class="d-none fa-solid fa-trophy score-bar-title"></i>
+      <p class='score-bar-result'><span><%=@user_journey.score%></span> / <%=@user_journey.total_score%></p>
+      <p class='score-bar-legend'>questions <br> validées</p>
+    </div>
+
+    <div class="card-score">
+      <i class="d-none fa-solid fa-coins score-bar-title"></i>
+      <p class='score-bar-result'><span><%=@user_journey.discount %></span> %</p>
+      <p class='score-bar-legend'>réduction gagnée</p>
+    </div>
+  </div>
+  <div class="swiper" data-controller='swiper'>
+    <div class="swiper-wrapper">
+      <% @user_journey.pieces.order(:id).each do |piece| %>
+        <div class="swiper-slide">
+          <div class="card-piece">
+            <%= link_to '', @user_journey.user_journey_pieces.find_by(piece: piece) if @user_journey.revealed?(piece) %>
+            <div class="card-piece-infos <%= "done" if @user_journey.revealed?(piece) %>" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path piece.photo.key %>)">
+              <div>
+                <% unless @user_journey.revealed?(piece) %>
+                  <i class="fa-solid fa-lock"></i>
+                <% end %>
+                <h2> <%= piece.name %></h2>
+                <p> <%= piece.artist %></p>
+                <% if piece.location  %>
+                <div class="card-piece-location"><i class="fa-regular fa-compass"></i> <%= piece.location %></div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>

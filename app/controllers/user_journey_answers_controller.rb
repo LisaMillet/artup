@@ -11,6 +11,7 @@ class UserJourneyAnswersController < ApplicationController
     # binding.pry
 
     @user_journey_piece.revealed! if @question == @user_journey_piece.last_question
+    @user_journey.update(status: false) if @user_journey_piece.last? && @question == @user_journey_piece.last_question
 
     continue_btn_path = if @question == @user_journey_piece.last_question
                           user_journey_piece_path(@user_journey_piece)

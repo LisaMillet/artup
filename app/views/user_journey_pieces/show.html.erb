@@ -1,8 +1,8 @@
 <% if @user_journey_piece.locked? %>
   <div id="scrollable">
-    <div class='picture-qr-code container w-100'>
-      <p>Trouvez <strong><%= @user_journey_piece.piece.name %></strong> dans le musée et scannez le QR Code</p>
-      <img class='' src="<%= cl_image_path @user_journey_piece.piece.photo.key%>" alt="<%=@user_journey_piece.piece.name %>">
+    <div class='picture-qr-code'>
+      <p class='container w-100'>Trouvez <strong><%= @user_journey_piece.piece.name %></strong> dans le musée et scannez le QR Code</p>
+      <img class='container w-100' src="<%= cl_image_path @user_journey_piece.piece.photo.key%>" alt="<%=@user_journey_piece.piece.name %>">
     </div>
     <div data-controller="scanner" id="reader" width="80vw" class='scanner'></div>
     <div class='d-flex justify-content-center my-2'>

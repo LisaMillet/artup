@@ -16,7 +16,7 @@
   .question {
     text-align: center;
     font-family: $headers-font;
-    font-size: 30px;
+    font-size: 24px;
     line-height: 2rem;
   }
   legend {
@@ -57,7 +57,7 @@
 
 .submit_button{
   font-family: $headers-font;
-  font-size: $small-font;
+  font-size: 18px;
 }
 
 .answers_css{
@@ -70,7 +70,7 @@
   width: 100%;
   font-family: $body-font;
   border-radius: $border-radius;
-  font-size: $small-font;
+  font-size: 18px;
   padding: 5px 10px 5px 10px;
   background-color: $green-gray;
   color: $dark-green;
@@ -95,7 +95,8 @@
   width: 100%;
   font-family: $body-font;
   border-radius: $border-radius;
-  font-size: $small-font;
+  font-size: 18px;
+  font-weight: 500;
   padding: 5px 10px 5px 10px;
   background-color: $green-gray;
   color: $dark-green;
@@ -130,18 +131,16 @@
 
   label {
     text-align: justify;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     color: $dark-green;
     font-family: $body-font;
-    font-weight: 600;
+    font-weight: 500;
     padding: 5px 10px 5px 10px;
     margin-right: 0.6rem;
-    margin-bottom: 17px;
     box-shadow: 2px 2px 2px 2px #c9c5c5;
   }
 }
 
 .continuer-button{
   text-align: center;
-  padding-top: 5px;
 }

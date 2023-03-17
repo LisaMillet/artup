@@ -74,7 +74,7 @@
     color: $green-gray;
     > * {
       text-align: center;
-      margin: 0 10px;
+      margin: 0;
     }
     > p {
       font-family: $body-font;
@@ -101,7 +101,7 @@
 
 
 .card-piece-banner-infos {
-  height: 200px;
+  height: 180px;
   margin-bottom: 20px;
   background-size: cover;
   background-position: 50% 20%;

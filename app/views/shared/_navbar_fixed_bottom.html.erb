@@ -1,16 +1,16 @@
 
 <div class="icone navbar-background">
-  <div class="d-flex justify-content-center" id="nav-btn">
-      <%= link_to root_path, class:'text-center' do %><i class="fa-solid fa-house"></i><% end %>
+  <div class="d-flex justify-content-around" id="nav-btn">
+      <%= link_to root_path, class:'icons-navbar' do %><%= image_tag 'home.png' %><% end %>
       <% if current_user.nil? %>
-        <div class="text-center">
-        <%= link_to new_user_session_path(), class:'text-center' do %><i class="fa-solid fa-user"></i><% end %>
+        <div class="icons-navbar">
+        <%= link_to new_user_session_path(), class:'icons-navbar' do %><i class="fa-solid fa-user"></i><% end %>
         </div>
       <% elsif @user_journey.nil? || @user_journey.id.nil? && %>
-        <%= link_to dashboard_path(current_user), class:'text-center' do %><i class="fa-solid fa-user"></i><% end %>
+        <%= link_to dashboard_path(current_user), class:'icons-navbar' do %><%= image_tag 'profile.png' %><% end %>
       <% else %>
-        <%= link_to quit_path(@user_journey), data:{turbo_method: :patch}, class:'text-center' do %><i class="fa-solid fa-right-from-bracket"></i><% end %>
-        <%= link_to dashboard_path(current_user), class:'text-center' do %><i class="fa-solid fa-user"></i><% end %>
-        <%= link_to user_journey_path(@user_journey), class:'text-center' do %><i class="fa-solid fa-location-dot"></i><% end %>
+        <%= link_to quit_path(@user_journey), data:{turbo_method: :patch}, class:'icons-navbar' do %><%= image_tag 'exit.png' %><% end %>
+        <%= link_to dashboard_path(current_user), class:'icons-navbar' do %><%= image_tag 'profile.png' %><% end %>
+        <%= link_to user_journey_path(@user_journey), class:'icons-navbar' do %><%= image_tag 'journey.png' %><% end %>
       <% end %>
 </div>

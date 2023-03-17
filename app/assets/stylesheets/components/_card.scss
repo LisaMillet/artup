@@ -46,9 +46,9 @@
     z-index: 10;
   }
   .card-piece-location {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     position: absolute;
-    bottom: 5px;
+    bottom: 15px;
     right: 0;
     left: 0;
     color: $green-gray;
@@ -75,6 +75,7 @@
     > * {
       text-align: center;
       margin: 0;
+      padding: 0 19px;
     }
     > p {
       font-family: $body-font;

@@ -11,14 +11,14 @@
 
       <div class="card-score">
         <i class="d-none fa-solid fa-trophy score-bar-title"></i>
-        <p class='score-bar-result'><span><%=@user_journey.score%></span> / <%=@user_journey.total_score%></p>
-        <p class='score-bar-legend'>bonnes<br>réponses</p>
+        <p class='score-bar-result'><span><%=@user_journey.discount%></span> %</p>
+        <p class='score-bar-legend'>réduction gagnée</p>
       </div>
 
       <div class="card-score">
         <i class="d-none fa-solid fa-coins score-bar-title"></i>
-        <p class='score-bar-result'><span><%=@user_journey.discount%></span> %</p>
-        <p class='score-bar-legend'>réduction gagnée</p>
+        <p class='score-bar-result'><span><%=@user_journey.score%></span> / <%=@user_journey.total_score%></p>
+        <p class='score-bar-legend'>bonnes<br>réponses</p>
       </div>
     </div>
 
